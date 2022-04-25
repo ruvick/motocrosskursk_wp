@@ -10,16 +10,16 @@ Version: 1.0.1
 
 @font-face {
   font-family: "ProximaNova";
-  src: url("../fonts/ProximaNova-Regular.eot");
-  src: local("☺"), url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.ttf") format("truetype"), url("../fonts/ProximaNova-Regular.svg") format("svg");
+  src: url("fonts/ProximaNova-Regular.eot");
+  src: local("☺"), url("fonts/ProximaNova-Regular.woff") format("woff"), url("fonts/ProximaNova-Regular.ttf") format("truetype"), url("fonts/ProximaNova-Regular.svg") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ProximaNova";
-  src: url("../fonts/ProximaNova-Bold.eot");
-  src: local("☺"), url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.ttf") format("truetype"), url("../fonts/ProximaNova-Bold.svg") format("svg");
+  src: url("fonts/ProximaNova-Bold.eot");
+  src: local("☺"), url("fonts/ProximaNova-Bold.woff") format("woff"), url("fonts/ProximaNova-Bold.ttf") format("truetype"), url("fonts/ProximaNova-Bold.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
@@ -319,7 +319,7 @@ h4 {
   transition: all 0.3s ease 0s;
   width: 11px;
   height: 7px;
-  background: url("../img/icons/triangl-black.svg") center/100% no-repeat;
+  background: url("img/icons/triangl-black.svg") center/100% no-repeat;
 }
 
 .select__input {
@@ -443,7 +443,7 @@ textarea.input {
 }
 
 .checkbox__input:checked+.checkbox__text:before {
-  background: #fff url("../img/icons/check.svg") center no-repeat;
+  background: #fff url("img/icons/check.svg") center no-repeat;
 }
 
 .checkbox__text {
@@ -816,7 +816,7 @@ textarea.input {
 }
 
 ._no-webp .parallax {
-  background: url("../img/smart-conven.jpg") center/cover no-repeat fixed;
+  background: url("img/smart-conven.jpg") center/cover no-repeat fixed;
 }
 
 ol.counter {
@@ -1643,12 +1643,12 @@ body.ie ._ibg img {
 
 .lg-actions .lg-next {
   right: 20px;
-  background: url("../img/icons/p-right.svg") 0 0/100% no-repeat;
+  background: url("img/icons/p-right.svg") 0 0/100% no-repeat;
 }
 
 .lg-actions .lg-prev {
   left: 20px;
-  background: url("../img/icons/p-left.svg") 0 0/100% no-repeat;
+  background: url("img/icons/p-left.svg") 0 0/100% no-repeat;
 }
 
 @-webkit-keyframes lg-right-end {
@@ -1750,7 +1750,7 @@ body.ie ._ibg img {
 }
 
 .lg-toolbar .lg-close {
-  background: url("../img/icons/close.svg") center no-repeat;
+  background: url("img/icons/close.svg") center no-repeat;
 }
 
 .lg-toolbar .lg-download {
@@ -1996,15 +1996,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 ._no-webp .lg-outer .lg-has-vimeo .lg-video-play {
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 0 transparent;
+  background: url("img/vimeo-play.png") no-repeat scroll 0 0 transparent;
 }
 
 ._no-webp .lg-outer .lg-has-vimeo:hover .lg-video-play {
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
+  background: url("img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
 }
 
 ._no-webp .lg-outer .lg-has-html5 .lg-video-play {
-  background: transparent url("../img/video-play.png") no-repeat scroll 0 0;
+  background: transparent url("img/video-play.png") no-repeat scroll 0 0;
 }
 
 .lg-outer .lg-has-html5 .lg-video-play {
@@ -2020,11 +2020,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 ._no-webp .lg-outer .lg-has-youtube .lg-video-play {
-  background: url("../img/youtube-play.png") no-repeat scroll 0 0 transparent;
+  background: url("img/youtube-play.png") no-repeat scroll 0 0 transparent;
 }
 
 ._no-webp .lg-outer .lg-has-youtube:hover .lg-video-play {
-  background: url("../img/youtube-play.png") no-repeat scroll 0 -60px transparent;
+  background: url("img/youtube-play.png") no-repeat scroll 0 -60px transparent;
 }
 
 .lg-outer .lg-video-object {
@@ -2506,7 +2506,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-item {
-  background: url("../img/icons/loading.gif") no-repeat scroll center center transparent;
+  background: url("img/icons/loading.gif") no-repeat scroll center center transparent;
   display: none !important;
 }
 
@@ -2767,7 +2767,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   left: 10%;
   width: 5px;
   height: 10px;
-  background: url("../img/icons/pagination__back.svg");
+  background: url("img/icons/pagination__back.svg");
   background-repeat: no-repeat;
 }
 
@@ -2815,7 +2815,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   right: 10%;
   width: 5px;
   height: 10px;
-  background: url("../img/icons/pagination__next.svg");
+  background: url("img/icons/pagination__next.svg");
   background-repeat: no-repeat;
 }
 
@@ -3426,7 +3426,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   z-index: 30;
   width: 20px;
   height: 20px;
-  background: url("../img/icons/close.svg") 0 0 no-repeat;
+  background: url("img/icons/close.svg") 0 0 no-repeat;
 }
 
 .popup__img {
@@ -3838,7 +3838,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 ._no-webp .banner {
-  background-image: url("../img/banner.jpg");
+  background-image: url("img/banner.jpg");
 }
 
 .banner {
@@ -4075,7 +4075,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 ._no-webp .banner-narrow {
-  background-image: url("../img/banner-narrow.jpg");
+  background-image: url("img/banner-narrow.jpg");
 }
 
 .banner-narrow {
@@ -4510,7 +4510,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   right: 15px;
   cursor: pointer;
   z-index: 30;
-  background: url("img/close.svg") 0 0 no-repeat;
+  background: url("img/icons/close.svg") 0 0 no-repeat;
 }
 
 .popup__form-block {
@@ -5044,33 +5044,33 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 }
 
 ._webp .parallax {
-  background: url(../img/smart-conven.webp) center/cover no-repeat fixed;
+  background: url(img/smart-conven.webp) center/cover no-repeat fixed;
 }
 
 ._webp .lg-outer .lg-has-vimeo .lg-video-play {
-  background: url(../img/vimeo-play.webp) no-repeat scroll 0 0 transparent;
+  background: url(img/vimeo-play.webp) no-repeat scroll 0 0 transparent;
 }
 
 ._webp .lg-outer .lg-has-vimeo:hover .lg-video-play {
-  background: url(../img/vimeo-play.webp) no-repeat scroll 0 -58px transparent;
+  background: url(img/vimeo-play.webp) no-repeat scroll 0 -58px transparent;
 }
 
 ._webp .lg-outer .lg-has-html5 .lg-video-play {
-  background: transparent url(../img/video-play.webp) no-repeat scroll 0 0;
+  background: transparent url(img/video-play.webp) no-repeat scroll 0 0;
 }
 
 ._webp .lg-outer .lg-has-youtube .lg-video-play {
-  background: url(../img/youtube-play.webp) no-repeat scroll 0 0 transparent;
+  background: url(img/youtube-play.webp) no-repeat scroll 0 0 transparent;
 }
 
 ._webp .lg-outer .lg-has-youtube:hover .lg-video-play {
-  background: url(../img/youtube-play.webp) no-repeat scroll 0 -60px transparent;
+  background: url(img/youtube-play.webp) no-repeat scroll 0 -60px transparent;
 }
 
 ._webp .banner {
-  background-image: url(../img/banner.webp);
+  background-image: url(img/banner.webp);
 }
 
 ._webp .banner-narrow {
-  background-image: url(../img/banner-narrow.webp);
+  background-image: url(img/banner-narrow.webp);
 }

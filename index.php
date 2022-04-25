@@ -11,7 +11,7 @@
 
 			<div class="banner__flex-descp">
 				<h1 class="banner__title">
-					Мотокросс в г. Курске, <br>
+					Мотокросс в г. Курске, <br> 
 					урочище Крутой лог
 				</h1>
 				<div class="banner__flex-descp-btn d-flex">
@@ -73,7 +73,7 @@
 			<div class="competitions__column">
 				<div class="competitions__card">
 					<div class="competitions__card-img">
-						<picture><source srcset="img/competitions/01.webp" type="image/webp"><img src="img/competitions/01.jpg?_v=1646818987671" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/competitions/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/competitions/01.jpg?_v=1646818987671" alt=""></picture>
 					</div>
 					<div class="competitions__card-descp">
 						<h4>Мотокросс в Крутом логе</h4>
@@ -91,7 +91,7 @@
 			<div class="competitions__column">
 				<div class="competitions__card">
 					<div class="competitions__card-img">
-						<picture><source srcset="img/competitions/02.webp" type="image/webp"><img src="img/competitions/02.jpg?_v=1646818987671" alt=""></picture>
+						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/competitions/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/competitions/02.jpg?_v=1646818987671" alt=""></picture>
 					</div>
 					<div class="competitions__card-descp">
 						<h4>Extreme Challenge</h4>

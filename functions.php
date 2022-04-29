@@ -1,6 +1,6 @@
 <?php
 
-define("COMPANY_NAME", "Новый сайт");
+define("COMPANY_NAME", "МоткроссКурск");
 define("MAIL_RESEND", "noreply@ultrakresla.ru");
 
 //----Подключене carbon fields
@@ -406,7 +406,7 @@ function sendphone()
 		);
 
 		add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-		if (wp_mail(carbon_get_theme_option('as_email_send'), 'Заказ звонка', '<strong>Имя:</strong> ' . $_REQUEST["name"] . ' <br/> <strong>Телефон:</strong> ' . $_REQUEST["tel"], $headers))
+		if (wp_mail(carbon_get_theme_option('as_email_send'), 'Заявка на регистрацию', '<strong>Имя:</strong> ' . $_REQUEST["name"] . ' <br/> <strong>Телефон:</strong> ' . $_REQUEST["tel"], $headers))
 			wp_die("<span style = 'color:green;'>Мы свяжемся с Вами в ближайшее время.</span>");
 		else wp_die("<span style = 'color:red;'>Сервис недоступен попробуйте позднее.</span>");
 	} else {

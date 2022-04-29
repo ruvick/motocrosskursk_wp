@@ -398,7 +398,8 @@ textarea:focus {
 }
 
 .input._focus {
-  background: grey;
+  /* background: grey; */
+  border: 1px solid grey;
 }
 
 .input._error {
@@ -4541,19 +4542,15 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   font-size: 18px;
   font-family: Lato-Light, sans-serif;
   text-transform: uppercase;
-  color: #d3820f;
-  border: 1px solid #d3820f;
+  /* color: #d3820f; */
+  /* border: 1px solid #d3820f; */
   cursor: pointer;
 }
 
-.popup__form-btn:hover {
+/* .popup__form-btn:hover {
   color: #fff;
   background-color: #d3820f;
-}
-
-.popup__item img {
-  width: 40%;
-}
+} */
 
 .SendetMsg {
   padding: 10px 0;

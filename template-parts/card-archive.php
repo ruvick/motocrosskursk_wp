@@ -5,9 +5,9 @@
     </div>
     <div class="card-compet__card-descp">
       <h4><?php the_title();?></h4>
-      <p class="card-compet__card-descp-date">16-17 октября 2022 г.</p>
-      <p class="card-compet__card-descp-address">г. Курск, ур. Крутой лог</p>
+      <p class="card-compet__card-descp-date"><?echo carbon_get_post_meta(get_the_ID(),"custom_post_date"); ?></p>
+      <p class="card-compet__card-descp-address"><?echo carbon_get_post_meta(get_the_ID(),"custom_post_adress"); ?></p>
       <a href="<?php echo get_permalink();?>" class="card-compet__card-descp-btn btn">ПОСМОТРЕТЬ АРХИВ</a>
     </div>
-  </div>
+  </div> 
 </div> 

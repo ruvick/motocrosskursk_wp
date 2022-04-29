@@ -4574,7 +4574,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 /* Popup JS End*/
 
+.banner-thanks__title {
+  margin-bottom: 15px;
+}
 
+.banner-thanks__subtitle {
+  color: #fff;
+  margin-bottom: 45px;
+}
 
 
 

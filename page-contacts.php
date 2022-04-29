@@ -10,16 +10,21 @@ get_header(); ?>
 <?php get_template_part('template-parts/header-section');?>
 
 <main class="page">
-  <section class="content">
-  <div class="_container">
+	
+	<section id="banner-narrow" class="banner-narrow">
+		<div class="nuar_blk"></div>
+		<div class="_container">
+			<h1 class="banner-narrow__title"><? the_title();?></h1>
+		</div>
+	</section>
 
-  <?php
-			if ( function_exists('yoast_breadcrumb') ) {
-				yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
-			}
+  <section class="content page-recurring">
+  	<div class="_container">
+  		<?php
+				if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
+				}
 			?> 
-
-	<h1><? the_title();?></h1> 
 
   <ul> 
 	  <? $org = carbon_get_theme_option("as_company"); if (!empty($org)){?><li>Организация: <strong><? echo $org; ?></strong></li><?}?> 

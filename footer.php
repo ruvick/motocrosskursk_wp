@@ -3,12 +3,8 @@
 
 		<div class="footer__row d-flex">
 
-			<ul class="menu-list footer__menu d-flex">
-				<li class="menu-list__item"><a href="#" class="menu-list__link">О федерации</a></li>
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Соревнования</a></li>
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Архив</a></li>
-				<li class="menu-list__item"><a href="#" class="menu-list__link">Контакты</a></li>
-			</ul>
+			<?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu-list footer__menu d-flex',
+				'container_class' => 'menu-list footer__menu d-flex','container' => false )); ?> 
 
 			<div class="footer__contacts contacts d-flex">
 				<? $tel = carbon_get_theme_option("as_phones_1"); 

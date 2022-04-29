@@ -11,14 +11,15 @@
 			</ul>
 
 			<div class="footer__contacts contacts d-flex">
-				<a href="tel:88003504566" class="contacts__phone footer__phone">8 800 350 45 66</a>
-				<a href="mailto:info@motocrosskursk.ru" class="contacts__mail footer__mail">info@motocrosskursk.ru</a>
-				<!-- <a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>"><? echo $tel = carbon_get_theme_option("as_phone_1"); ?></a> -->
+				<? $tel = carbon_get_theme_option("as_phones_1"); 
+					if (!empty($tel)){?><a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>" class="contacts__phone footer__phone"><? echo $tel; ?></a><?}?>
+				<? $mail = carbon_get_theme_option("as_email");
+					if (!empty($mail)) { ?><a href="mailto:<? echo $mail; ?>" class="contacts__mail footer__mail"><? echo $mail; ?></a><? } ?>
 			</div>
 
 			<div class="footer__social-block social-block d-flex">
-				<a href="#" class="footer__social-icon social-block-icon social-block-icon-01"></a>
-				<a href="#" class="footer__social-icon social-block-icon social-block-icon-02"></a>
+				<a href="<?php echo carbon_get_theme_option('as_vk'); ?>" class="footer__social-icon social-block-icon social-block-icon-01"></a>
+				<a href="<?php echo carbon_get_theme_option('as_insta'); ?>" class="footer__social-icon social-block-icon social-block-icon-02"></a>
 			</div>
 
 		</div>

@@ -4,27 +4,32 @@
 
 <main class="page">
 
-<section id="banner" class="banner">
+<?php 
+		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('banner_img'), 'full')[0];
+			if(empty($banner)) {
+		$banner = get_template_directory_uri() . '/img/banner.jpg';
+	} ?>
+
+<section id="banner" class="banner" style="background-image: url(<?php echo $banner?>);">
 	<div class="nuar_blk"></div>
 	<div class="_container">
 		<div class="banner__flex d-flex">
 
 			<div class="banner__flex-descp">
 				<h1 class="banner__title">
-					Мотокросс в г. Курске, <br> 
-					урочище Крутой лог
+					<?php echo carbon_get_theme_option('banner_title'); ?>
 				</h1>
 				<div class="banner__flex-descp-btn d-flex">
 					<a href="#callback" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
-					<a href="#" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a>  
+					<a href="<?php echo carbon_get_theme_option('banner_link'); ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a>  
 				</div>
 			</div>
 
 			<div class="banner__flex-date">
-				<p class="banner__flex-date-number">16-17</p>
-				<div class="banner__flex-date-line"></div>
-				<p class="banner__flex-date-month">октября</p>
-				<p class="banner__flex-date-year">2022</p>
+				<p class="banner__flex-date-number"><?php echo carbon_get_theme_option('banner_number'); ?></p>
+				<div class="banner__flex-date-line"></div> 
+				<p class="banner__flex-date-month"><?php echo carbon_get_theme_option('banner_month'); ?></p>
+				<p class="banner__flex-date-year"><?php echo carbon_get_theme_option('banner_year'); ?></p>
 			</div>
 
 		</div>

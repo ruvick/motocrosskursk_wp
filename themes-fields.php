@@ -12,29 +12,39 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field; 
 
 Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
-    ->add_tab('Главная', array(
-      // Field::make( 'image', 'as_logo', 'Логотип в шапке')
-      //   ->set_width(30),
-      // Field::make( 'image', 'as_logo_white', 'Логотип в подвале')
-      //   ->set_width(30),
+    ->add_tab('Банер', array(
+      Field::make('image', 'banner_img', 'Картинка')
+      ->set_width(50),
+      Field::make('text', 'banner_title', 'Заголовок банера')
+      ->set_width(50), 
+      Field::make('text', 'banner_number', 'Дата проведения')
+      ->set_width(50), 
+      Field::make('text', 'banner_month', 'Месяц проведения')
+      ->set_width(50), 
+      Field::make('text', 'banner_year', 'Год проведения')
+      ->set_width(50), 
+      Field::make('text', 'banner_link', 'Ссылка Подробнее о соревновании')
+      ->set_width(50), 
+    ))
+    ->add_tab('О нас', array(
       Field::make('text', 'about_home_title', 'Заголовок на главной'), 
       Field::make('rich_text', 'about_home', 'О нашей компании')
     ))
-    ->add_tab('Слайдер', array(
-      Field::make('complex', 'slider_index', 'Слайдер на главной')
-        ->add_fields(array(
-          Field::make('image', 'slider_img', 'Картинка слайдера')
-            ->set_width(50),
-          Field::make('text', 'slider_title', 'Заголовок слайдера')
-            ->set_width(50),
-          // Field::make('text', 'slider_subtitle', 'Подзаголовок слайдера')
-          //   ->set_width(50),
-          // Field::make('text', 'slider_link', 'Ссылка в кнопке')
-          //   ->set_width(50),
-          // Field::make('text', 'slider_link_text', 'Текст в кнопке')
-          //   ->set_width(50),
-        ))
-    ))
+    // ->add_tab('Слайдер', array(
+    //   Field::make('complex', 'slider_index', 'Слайдер на главной')
+    //     ->add_fields(array(
+    //       Field::make('image', 'slider_img', 'Картинка слайдера')
+    //         ->set_width(50),
+    //       Field::make('text', 'slider_title', 'Заголовок слайдера')
+    //         ->set_width(50),
+    //       // Field::make('text', 'slider_subtitle', 'Подзаголовок слайдера')
+    //       //   ->set_width(50),
+    //       // Field::make('text', 'slider_link', 'Ссылка в кнопке')
+    //       //   ->set_width(50),
+    //       // Field::make('text', 'slider_link_text', 'Текст в кнопке')
+    //       //   ->set_width(50),
+    //     ))
+    // ))
     ->add_tab('Разделы', array(
       Field::make('complex', 'complex_sections', 'Разделы на главной')
       ->set_max(5) // Можно будет выбрать только 5 постов

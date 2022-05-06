@@ -11,7 +11,7 @@
 
 				<div class="header__social social-block">
 					<a href="<?php echo carbon_get_theme_option('as_vk'); ?>" class="header__social-icon social-block-icon social-block-icon-01"></a>
-					<a href="<?php echo carbon_get_theme_option('as_insta'); ?>" class="header__social-icon social-block-icon social-block-icon-02"></a> 
+					<a href="<?php echo carbon_get_theme_option('as_telegr'); ?>" class="header__social-icon social-block-icon social-block-icon-02"></a>  
 				</div>
 
 				<div class="contacts header__contacts d-flex">

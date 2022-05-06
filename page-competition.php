@@ -1,6 +1,13 @@
-<?php get_header(); ?>
+<?php 
 
-<?php get_template_part('template-parts/header-section');?>
+/*
+Template Name: Страница Сорвенования
+Template Post Type: page
+*/
+
+get_header(); ?>
+
+<?php get_template_part('template-parts/header-section');?> 
 
 <main class="page">
 
@@ -36,26 +43,13 @@
 	</div>
 </section>
 
-<? $abouttc = carbon_get_theme_option("about_home");
-	if (!empty($abouttc)) { ?>
-<section id="about" class="about">
+<section id="competitions" class="competitions competitions-page">
 	<div class="_container">
-		<h2 class="about__title"><?php echo carbon_get_theme_option('about_home_title'); ?></h2>
-		<div class="about__descp">
-			<p><? echo $abouttc; ?></p>
-		</div>
-	</div>
-</section>
-<? } ?>
-
-<section id="line" class="line">
-	<div class="_container">
-		<div class="line-bg"></div>
-	</div>
-</section>
-
-<section id="competitions" class="competitions">
-	<div class="_container">
+  <?php
+				if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
+				}
+			?> 
 		<h2 class="competitions__title">Наши соревнования</h2>
 
 		<div class="competitions__row">
@@ -98,4 +92,4 @@
 
 </main>
 
-<?php get_footer(); ?> 
+<?php get_footer();

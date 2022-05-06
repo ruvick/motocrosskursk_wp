@@ -12,7 +12,7 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field; 
 
 Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
-    ->add_tab('Банер', array(
+    ->add_tab('Банер на главной', array(
       Field::make('image', 'banner_img', 'Картинка')
       ->set_width(50),
       Field::make('text', 'banner_title', 'Заголовок банера')

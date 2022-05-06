@@ -3937,7 +3937,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .about {
-  padding: 122px 0 90px 0;
+  padding: 65px 0;
 }
 
 .about__title {
@@ -4212,6 +4212,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin-bottom: 40px;
 }
 
+.about-competition p,
 .about-competition__subtitle {
   font-size: 20px;
   line-height: 33px;
@@ -4583,9 +4584,48 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   margin-bottom: 45px;
 }
 
+.competitions-page {
+  padding: 30px 0 100px 0;
+}
 
+.list-registered__table {
+  max-width: 100%;
+  width: 100%;
+}
 
+.list-registered__table-thead {}
 
+.list-registered__table-thead-tr {}
+
+.list-registered__table-thead-td {
+  padding: 10px 25px;
+}
+
+.list-registered__table-thead-tr-top {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #585858;
+}
+
+.list-registered__table-tbody {}
+
+.list-registered__table-tbody-tr {
+  background: #F7F7F7;
+}
+
+.list-registered__table-tbody-tr:nth-child(2n) {
+  background: #FBFBFB;
+}
+
+.list-registered__table-tbody-td {
+  padding: 40px 25px;
+  border-right: 1px solid #E7E7E7;
+}
+
+.list-registered__table-tbody-td:last-child {
+  border-right: none;
+}
 
 
 

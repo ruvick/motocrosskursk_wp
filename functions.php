@@ -167,6 +167,7 @@ function my_assets()
 	// wp_enqueue_script('html2pdf', get_template_directory_uri() . '/js/html2pdf.bundle.js', array(), $scrypt_version, true); //Create PDF-page 
 
 	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), $scrypt_version, true); // Подключение основного скрипта в самом конце
+	wp_enqueue_script('otpravka', get_template_directory_uri() . '/js/sende_zayavka.js', array(), $scrypt_version, true); // Подключение скрипта отправки заявки
 
 	if ( is_page(17)) // Корзина
 	{
@@ -868,5 +869,31 @@ function get_zak_detail() {
 	}
 }
 
+//Загрузка файла
+
+add_action( 'wp_ajax_main_load_file', 'main_load_file' );
+add_action( 'wp_ajax_nopriv_main_load_file', 'main_load_file' );
+
+function main_load_file() {
+    
+    if ( empty( $_REQUEST['nonce'] ) ) {
+      wp_die( '0' );
+    }
+    
+    if ( check_ajax_referer( 'NEHERTUTLAZIT', 'nonce', false ) ) {
+
+       $movrez = move_uploaded_file($_FILES['file']['tmp_name'], get_template_directory().'/download/'.$_FILES['file']['name']);
+
+       if ($movrez)
+       {
+         wp_die(get_template_directory().'/download/'.$_FILES['file']['name']);
+       }
+       else {
+         wp_die( 'При загрузке файла произошла ошибка', '', 403 );
+       }
+    } else {
+      wp_die( 'НО-НО-НО!', '', 403 );
+    }
+}
 	
 ?>

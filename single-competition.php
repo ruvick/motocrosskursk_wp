@@ -106,10 +106,8 @@ get_header(); ?>
 
         <input id="name" autocomplete="off" type="text" name="razryad" data-error="Заполните поле" data-value="Спортивный разряд" class="input _req">
 
-        <!-- <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Класс" class="input _req"> -->
 
-        <select name="form[]" class="form input input_select">
+        <select name="klass" class="form input input_select">
           <option value="" disabled selected="selected">Класс</option>
           <option value="2">125 см3 (0910161811Г) (мужчины) — с 15 лет (15 лет – 2007 г. р.),</option>
           <option value="3">250 см3 (0910171811М) (мужчины) — с 15 лет (15 лет – 2007 г. р.)</option>
@@ -121,37 +119,41 @@ get_header(); ?>
           <option value="3">125 см3 (0910161811Г/юноши) – 13-17 лет (с 2009 по 2005 г.р.)</option>
         </select>
 
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Стартовый номер" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Город" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Команда" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Мотоцикл" class="input _req">
-        <textarea class="input" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Комментарий"></textarea>
+        <input id="name" autocomplete="off" type="text" name="number" data-error="Заполните поле" data-value="Стартовый номер" class="input _req">
+        <input id="name" autocomplete="off" type="text" name="gorod" data-error="Заполните поле" data-value="Город" class="input _req">
+        <input id="name" autocomplete="off" type="text" name="comanda" data-error="Заполните поле" data-value="Команда" class="input _req">
+        <input id="name" autocomplete="off" type="text" name="motocicl" data-error="Заполните поле" data-value="Мотоцикл" class="input _req">
+        <textarea class="input" type="text" name="comment" data-error="Заполните поле" data-value="Комментарий"></textarea>
       </div>
 
       <div class="application__form-block">
         <h4 class="application__form-block-title">Контактная информация</h4>
         <div class="application__form-line form__line">
-          <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-            data-value="Телефон" class="input phone _req">
-          <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-            data-value="Электронная почта" class="input email _req">
+          <input id="name" autocomplete="off" type="text" name="phone" data-error="Заполните поле" data-value="Телефон" class="input phone _req">
+          <input id="name" autocomplete="off" type="text" name="mail" data-error="Заполните поле" data-value="Электронная почта" class="input email _req">
         </div>
       </div>
 
       <div class="application__form-block">
         <h4 class="application__form-block-title">Документы</h4>
         <div class="application__form-line form__line">
-          <input id="name" autocomplete="off" type="file" name="form[]" data-error="Заполните поле"
-            data-value="Страховка" class="input _req">
-          <input id="name" autocomplete="off" type="file" name="form[]" data-error="Заполните поле"
-            data-value="Разрешение родителей*" class="input _req">
-          <input id="name" autocomplete="off" type="file" name="form[]" data-error="Заполните поле"
-            data-value="Медицинская справка" class="input _req">
+          <div class="input file_input_wrap">
+            <input id="strahovka" autocomplete="off" type="file" name="strahovka" data-error="Заполните поле" data-value="Страховка" data-filenameinput = "file-path_strahovka" data-filenamelabel = "label_strahovka" class="_req">
+            <label id = "label_strahovka" for="strahovka">Страховка (загрузить файл)</label>
+            <input type="hidden" id = "file-path_strahovka" class="file-path_strahovka" value="">
+          </div>
+          
+          <div class="input file_input_wrap">
+            <input id="razreshenie" autocomplete="off" type="file" name="razreshenie" data-error="Заполните поле" data-value="Разрешение родителей*" data-filenameinput = "file-path_razreshenie" data-filenamelabel = "label_razreshenie" class="_req">
+            <label id = "label_razreshenie" for="razreshenie">Разрешение родителей (загрузить файл)</label>
+            <input type="hidden" id="file-path_razreshenie" class="file-path_razreshenie" value="">
+          </div>
+          
+          <div class="input file_input_wrap">
+            <input id="spravka" autocomplete="off" type="file" name="spravka" data-error="Заполните поле" data-value="Медицинская справка" data-filenameinput = "file-path_spravka" data-filenamelabel = "label_spravka" class="_req">
+            <label id = "label_spravka" for="spravka">Медицинская справка (загрузить файл)</label>
+            <input type="hidden" id="file-path_spravka" class="file-path_spravka" value="">
+          </div>
         </div>
         <p class="application__form-block-title-footnote">*Нотариально заверенное разрешение от обоих родителей
           (для спортсменов, не достигших 18 лет)</p>

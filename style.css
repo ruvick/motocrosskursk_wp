@@ -399,6 +399,16 @@ textarea:focus {
   border-radius: 3px;
 }
 
+.file_input_wrap input{
+  display: none;
+}
+
+.file_input_wrap label{ 
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+
 .input_select {
   border:none;
   padding: 0;
@@ -4762,6 +4772,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     -ms-flex: 0 0 190px;
     flex: 0 0 190px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -4933,6 +4944,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     line-height: 1.3;
     margin-bottom: 15px;
   }
+
+  .about-competition__item {
+    flex: 0 1 100%;
+  }
+
+  .application__form-line .input {
+    flex: 0 1 100%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -5014,6 +5033,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner__title {
     margin-bottom: 15px;
+    font-size: 32px;
+    text-align: center;
   }
 
   .banner {
@@ -5023,6 +5044,21 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner__flex-descp {
     margin-bottom: 15px;
+    width:100%;
+  }
+
+  .header__contacts { 
+    flex: 0 0 145px;
+  }
+
+  .banner__flex-descp-btn a {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .banner__flex-date {
+    flex: 0 0 225px;
+    margin: auto;
   }
 }
 
@@ -5063,10 +5099,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 }
 
 @media (max-width: 414px) {
-  .banner__flex-descp-btn a {
-    width: 100%;
-    margin-right: 0;
-  }
+
 
   .banner__flex-date {
     padding: 35px;

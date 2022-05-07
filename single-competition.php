@@ -12,7 +12,7 @@ get_header(); ?>
 <main class="page">
 
 <?php 
-		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('banner_img'), 'full')[0];
+		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('sor_banner_img'), 'full')[0];
 			if(empty($banner)) {
 		$banner = get_template_directory_uri() . '/img/banner.jpg';
 	} ?>
@@ -24,19 +24,18 @@ get_header(); ?>
 
 			<div class="banner__flex-descp">
 				<h1 class="banner__title">
-					<?php echo carbon_get_theme_option('banner_title'); ?>
+					<?php echo carbon_get_the_post_meta('sor_banner_title'); ?>
 				</h1>
 				<div class="banner__flex-descp-btn d-flex">
-					<a href="#callback" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
-					<a href="<?php echo carbon_get_theme_option('banner_link'); ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a>  
+					<a href="<?php echo carbon_get_the_post_meta('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
 				</div>
 			</div>
 
 			<div class="banner__flex-date">
-				<p class="banner__flex-date-number"><?php echo carbon_get_theme_option('banner_number'); ?></p>
+				<p class="banner__flex-date-number"><?php echo carbon_get_the_post_meta('sor_banner_number'); ?></p>
 				<div class="banner__flex-date-line"></div> 
-				<p class="banner__flex-date-month"><?php echo carbon_get_theme_option('banner_month'); ?></p>
-				<p class="banner__flex-date-year"><?php echo carbon_get_theme_option('banner_year'); ?></p>
+				<p class="banner__flex-date-month"><?php echo carbon_get_the_post_meta('sor_banner_month'); ?></p>
+				<p class="banner__flex-date-year"><?php echo carbon_get_the_post_meta('sor_banner_year'); ?></p>
 			</div>
 
 		</div>
@@ -54,16 +53,32 @@ get_header(); ?>
 
     <div class="about-competition">
       <h2 class="about-competition__title">О соревновании</h2>
-      <?php the_content(); ?>
+      
+      <div class="text_style">
+        <?php the_content(); ?>
+      </div>
+      
+      
       <div class="about-competition__row">
-        <a href="#" class="about-competition__item">
-          <span class="about-competition__item-icon about-competition__item-icon-01"></span>
-          <p class="about-competition__item-descp">Положение о проведении мероприятия</p>
-        </a>
-        <a href="#" class="about-competition__item">
-          <span class="about-competition__item-icon about-competition__item-icon-02"></span>
-          <p class="about-competition__item-descp">Физкультурные мероприятия</p>
-        </a>
+        <?
+          $fiz = carbon_get_the_post_meta('fiz_meropriyatiya');
+          $polozg = carbon_get_the_post_meta('pologenie');
+
+        ?>
+
+        <? if ($polozg) {?>
+          <a href="<?echo wp_get_attachment_url($polozg);?>" class="about-competition__item">
+            <span class="about-competition__item-icon about-competition__item-icon-01"></span>
+            <p class="about-competition__item-descp">Положение о проведении мероприятия</p>
+          </a>
+        <?}?>
+
+        <? if ($fiz) {?>
+          <a href="<?echo wp_get_attachment_url($fiz);?>" class="about-competition__item">
+            <span class="about-competition__item-icon about-competition__item-icon-02"></span>
+            <p class="about-competition__item-descp">Физкультурные мероприятия</p>
+          </a>
+        <?}?>
       </div>
     </div>
 

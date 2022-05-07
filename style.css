@@ -4632,7 +4632,21 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 
 
+.text_style h3{
+  margin: 20px 0;
+  font-size: 1em;
+}
 
+.text_style ul{
+  padding-left: 10px;
+  margin-left: 10px;
+  
+}
+
+.text_style ul li{ 
+  margin: 5px 0;
+  list-style: disc;
+}
 
 
 

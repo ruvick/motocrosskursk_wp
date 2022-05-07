@@ -22,8 +22,10 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       Field::make('text', 'banner_month', 'Месяц проведения')
       ->set_width(50), 
       Field::make('text', 'banner_year', 'Год проведения')
-      ->set_width(50), 
+      ->set_width(100), 
       Field::make('text', 'banner_link', 'Ссылка Подробнее о соревновании')
+      ->set_width(50), 
+      Field::make('text', 'banner_link_zayavka', 'Ссылка подать заявку')
       ->set_width(50), 
     ))
     ->add_tab('О нас', array(
@@ -121,10 +123,32 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
     ) );
 
     Container::make('post_meta', 'single', 'Доп поля карточки')
-	    // ->show_on_template('single.php')
+	    ->show_on_template('single-competition.php')
 	    ->add_fields(array(
-		    Field::make('text', 'custom_post_date', 'Дата')->set_width(50),
-		    Field::make('text', 'custom_post_adress', 'Адрес')->set_width(50),
+		    Field::make('file', 'fiz_meropriyatiya', 'Физкультурные мероприятия')->set_width(50),
+		    Field::make('file', 'pologenie', 'Положение о проведении мероприятия')->set_width(50),
+		    Field::make('text', 'custom_post_date', 'Дата для карточки')->set_width(50),
+		    Field::make('text', 'custom_post_adress', 'Адрес для карточки')->set_width(50),
       ));
+
+      Container::make('post_meta', 'single_bn', 'Доп для баннера соревнований')
+	    ->show_on_template('single-competition.php')
+	    ->add_fields(array(
+        Field::make('image', 'sor_banner_img', 'Картинка')
+        ->set_width(50),
+        Field::make('text', 'sor_banner_title', 'Заголовок банера')
+        ->set_width(50), 
+        Field::make('text', 'sor_banner_number', 'Дата проведения')
+        ->set_width(50), 
+        Field::make('text', 'sor_banner_month', 'Месяц проведения')
+        ->set_width(50), 
+        Field::make('text', 'sor_banner_year', 'Год проведения')
+        ->set_width(100), 
+        Field::make('text', 'banner_link_zayavka', 'Ссылка подать заявку')
+        ->set_width(100),
+      ));
+
+
+
 
 ?>

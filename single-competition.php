@@ -32,10 +32,10 @@ get_header(); ?>
 			</div>
 
 			<div class="banner__flex-date">
-				<p class="banner__flex-date-number"><?php echo carbon_get_the_post_meta('sor_banner_number'); ?></p>
+				<p class="banner__flex-date-number"><?php echo $data = carbon_get_the_post_meta('sor_banner_number'); ?></p>
 				<div class="banner__flex-date-line"></div> 
-				<p class="banner__flex-date-month"><?php echo carbon_get_the_post_meta('sor_banner_month'); ?></p>
-				<p class="banner__flex-date-year"><?php echo carbon_get_the_post_meta('sor_banner_year'); ?></p>
+				<p class="banner__flex-date-month"><?php echo $month = carbon_get_the_post_meta('sor_banner_month'); ?></p>
+				<p class="banner__flex-date-year"><?php echo $year =  carbon_get_the_post_meta('sor_banner_year'); ?></p>
 			</div>
 
 		</div>
@@ -98,24 +98,28 @@ get_header(); ?>
     <form action="#" class="application__form">
 
       <div class="application__form-line form__line">
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Фамилия Имя Отчество" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Дата рождения" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Спортивный разряд" class="input _req">
+        <input type = "hidden" name = "ch_id" value = "<? echo $data." ".$month." ".$year?>">
+        
+        <input id="name" autocomplete="off" type="text" name="fio" data-error="Заполните поле" data-value="Фамилия Имя Отчество" class="input _req">
+        
+        <input id="name" autocomplete="off" type="date" name="datar" data-error="Заполните поле" data-value="Дата рождения" class="input _req">
 
-        <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
-          data-value="Класс" class="input _req">
+        <input id="name" autocomplete="off" type="text" name="razryad" data-error="Заполните поле" data-value="Спортивный разряд" class="input _req">
 
-        <!-- <select name="form[]" class="form input">
-          <option value="1" selected="selected">Пункт №1</option>
-          <option value="2">Пункт №2</option>
-          <option value="3">Пункт №3</option>
-          <option value="4">Пункт №4</option>
-          <option value="2">Пункт №5</option>
-          <option value="3">Пункт №6</option>
-        </select> -->
+        <!-- <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
+          data-value="Класс" class="input _req"> -->
+
+        <select name="form[]" class="form input input_select">
+          <option value="" disabled selected="selected">Класс</option>
+          <option value="2">125 см3 (0910161811Г) (мужчины) — с 15 лет (15 лет – 2007 г. р.),</option>
+          <option value="3">250 см3 (0910171811М) (мужчины) — с 15 лет (15 лет – 2007 г. р.)</option>
+          <option value="4">“Открытый” (0910281811Л) – с 35 лет (35 лет – 1987 г.р.).</option>
+          <option value="2">50 см3 (0910131811Н) (младшие мальчики) — 6 — 8 лет (с 2016 по 2014 г.р., + родившиеся после 01.10.2013 г.р.)</option>
+          <option value="3">65 см3 (0910141811Н) (мальчики) —  8 — 10 лет (с 2014 по 2012 г.р.)</option>
+          <option value="3">65 см3 (0910141811Н) (юноши, девушки) — 10 — 12 лет (с 2012 по 2010 г.р.)</option>
+          <option value="3">85 см3 (0910151811Н) (юноши, девушки) —  11 — 15 лет, (с 2011 по 2007 г.р.)</option>
+          <option value="3">125 см3 (0910161811Г/юноши) – 13-17 лет (с 2009 по 2005 г.р.)</option>
+        </select>
 
         <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
           data-value="Стартовый номер" class="input _req">
@@ -142,11 +146,11 @@ get_header(); ?>
       <div class="application__form-block">
         <h4 class="application__form-block-title">Документы</h4>
         <div class="application__form-line form__line">
-          <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
+          <input id="name" autocomplete="off" type="file" name="form[]" data-error="Заполните поле"
             data-value="Страховка" class="input _req">
-          <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
+          <input id="name" autocomplete="off" type="file" name="form[]" data-error="Заполните поле"
             data-value="Разрешение родителей*" class="input _req">
-          <input id="name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле"
+          <input id="name" autocomplete="off" type="file" name="form[]" data-error="Заполните поле"
             data-value="Медицинская справка" class="input _req">
         </div>
         <p class="application__form-block-title-footnote">*Нотариально заверенное разрешение от обоих родителей

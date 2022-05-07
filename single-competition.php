@@ -95,16 +95,16 @@ get_header(); ?>
   <div class="_container">
     <h2 class="application__title">Отправить заявку на участие</h2>
 
-    <form action="#" class="application__form">
+    <form id = "zayavka_form" action="#" class="application__form">
 
       <div class="application__form-line form__line">
         <input type = "hidden" name = "ch_id" value = "<? echo $data." ".$month." ".$year?>">
         
-        <input id="name" autocomplete="off" type="text" name="fio" data-error="Заполните поле" data-value="Фамилия Имя Отчество" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="text" name="fio" data-error="Заполните поле" placeholder = "Фамилия Имя Отчество" data-valuem="Фамилия Имя Отчество" class="input _req">
         
-        <input id="name" autocomplete="off" type="date" name="datar" data-error="Заполните поле" data-value="Дата рождения" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="date" name="datar" data-error="Заполните поле" placeholder = "Дата рождения" data-valuem="Дата рождения" class="input _req">
 
-        <input id="name" autocomplete="off" type="text" name="razryad" data-error="Заполните поле" data-value="Спортивный разряд" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="text" name="razryad" data-error="Заполните поле" placeholder = "Спортивный разряд" data-valuem="Спортивный разряд" class="input _req">
 
 
         <select name="klass" class="form input input_select">
@@ -119,18 +119,18 @@ get_header(); ?>
           <option value="3">125 см3 (0910161811Г/юноши) – 13-17 лет (с 2009 по 2005 г.р.)</option>
         </select>
 
-        <input id="name" autocomplete="off" type="text" name="number" data-error="Заполните поле" data-value="Стартовый номер" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="gorod" data-error="Заполните поле" data-value="Город" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="comanda" data-error="Заполните поле" data-value="Команда" class="input _req">
-        <input id="name" autocomplete="off" type="text" name="motocicl" data-error="Заполните поле" data-value="Мотоцикл" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="text" name="number" data-error="Заполните поле" placeholder = "Стартовый номер" data-valuem="Стартовый номер" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="text" name="gorod" data-error="Заполните поле" placeholder = "Город" data-valuem="Город" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="text" name="comanda" data-error="Заполните поле" placeholder = "Команда" data-valuem="Команда" class="input _req">
+        <input required value = "" id="name" autocomplete="off" type="text" name="motocicl" data-error="Заполните поле" placeholder = "Мотоцикл" data-valuem="Мотоцикл" class="input _req">
         <textarea class="input" type="text" name="comment" data-error="Заполните поле" data-value="Комментарий"></textarea>
       </div>
 
       <div class="application__form-block">
         <h4 class="application__form-block-title">Контактная информация</h4>
         <div class="application__form-line form__line">
-          <input id="name" autocomplete="off" type="text" name="phone" data-error="Заполните поле" data-value="Телефон" class="input phone _req">
-          <input id="name" autocomplete="off" type="text" name="mail" data-error="Заполните поле" data-value="Электронная почта" class="input email _req">
+          <input required value = "" id="name" autocomplete="off" type="text" name="phone" data-error="Заполните поле" placeholder = "Телефон" data-valuem="Телефон" class="input phone _req">
+          <input required value = "" id="name" autocomplete="off" type="text" name="mail" data-error="Заполните поле" placeholder = "Электронная почта" data-valuem="Электронная почта" class="input email _req">
         </div>
       </div>
 
@@ -158,7 +158,7 @@ get_header(); ?>
         <p class="application__form-block-title-footnote">*Нотариально заверенное разрешение от обоих родителей
           (для спортсменов, не достигших 18 лет)</p>
       </div>
-      <button class="btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+      <button data-formid = "zayavka_form" id = "zayavka_send" class="btn">ОТПРАВИТЬ ЗАЯВКУ</button>
     </form>
 
   </div>

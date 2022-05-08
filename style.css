@@ -3893,7 +3893,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .banner__title {
   color: #fff;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
+}
+
+.banner_sub_title {
+  color:white;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
 .banner__flex-descp-btn a {
@@ -3919,7 +3925,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   content: "";
   position: absolute;
   top: -8px;
-  left: 5%;
+  left: 10%;
   z-index: -1;
   width: 225px;
   height: 95px;
@@ -4644,7 +4650,9 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   border-right: none;
 }
 
-
+.list-registered__table-tbody-td .mobile_comment {
+  display: none;
+}
 
 
 
@@ -4773,6 +4781,28 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     flex: 0 0 190px;
   }
 
+  .list-registered__table-thead {
+    display: none;
+  }
+
+  .list-registered__table-tbody-tr {
+    display: flex;
+    flex-direction: column;
+  }
+  .list-registered__table-tbody-td .mobile_comment{
+    display: block;
+    font-weight: 600;
+  }
+  .list-registered__table-tbody-td {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted gray;
+  }
+
+  .list-registered__table-tbody-tr .list-registered__table-tbody-td:last-child{ 
+    border-bottom: 3px solid black;
+  }
 }
 
 @media (max-width: 768px) {
@@ -4952,6 +4982,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   .application__form-line .input {
     flex: 0 1 100%;
   }
+
+
+
+
 }
 
 @media (max-width: 700px) {
@@ -5037,6 +5071,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     text-align: center;
   }
 
+  .banner_sub_title { 
+    text-align: center;
+  }
+
   .banner {
     height: auto;
     padding: 80px 0 45px 0 !important;
@@ -5057,8 +5095,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner__flex-date {
-    flex: 0 0 225px;
+    flex: 0 0 290px;
     margin: auto;
+  }
+
+  .banner__flex-date:before {
+    top: -3px;
+    left: calc(50% - 87px);
+    width: 175px;
   }
 }
 
@@ -5105,7 +5149,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     padding: 35px;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
   }
 
   .banner__flex-date-number {

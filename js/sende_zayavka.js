@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             xhr.onload = function () {
                 
                 console.log(file_span);
-                file_span.value = file_data.name;
+                file_span.value = xhr.response;
                 file_label.innerHTML = file_data.name;
               };
 
@@ -29,16 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function form_validation(form) {
-        let valid_form = false;
+        let valid_form = true
         
         let all_form_input = form.querySelectorAll("input:required")
-        console.log(all_form_input);
-
+       
         for (let i = 0; i<all_form_input.length; i++)
         {
-            console.log(i+": "+all_form_input[i].value);
             if (all_form_input[i].value == "") {
-                
+                valid_form = false
                 all_form_input[i].classList.add("_error")
                 all_form_input[i].addEventListener("focus", (e) => {
                     all_form_input[i].classList.remove("_error")
@@ -49,15 +47,49 @@ document.addEventListener("DOMContentLoaded", () => {
         return valid_form;
     }
 
+    function get_form_comment(form) {
+        let fieeld_name = []
+        
+        let all_form_input = form.querySelectorAll("input")
+       
+        for (let i = 0; i<all_form_input.length; i++)
+        {
+            let tm = [];
+            tm[all_form_input[i].name] = all_form_input[i].dataset.valuem
+            fieeld_name.push(tm)
+        }
+
+        return fieeld_name;   
+    }
+
     let z_btn = document.getElementById("zayavka_send")
     if (z_btn)
     z_btn.addEventListener("click", (e) => {
         e.preventDefault()
-        
         let form_id = z_btn.dataset.formid;
         var form = document.getElementById(form_id);
-        form_validation(form)
-        var data = new FormData(form);
+        
+        console.log(get_form_comment(form))
+
+        if (form_validation(form)) {
+            console.log("do")
+            var data = new FormData(form);
+
+	        data.append('fildname', JSON.stringify(get_form_comment(form)));
+	        data.append('action', "zayavka_send");
+	        data.append('nonce', allAjax.nonce);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", allAjax.ajaxurl, true);
+
+            xhr.onload = function () {
+                console.log("SEND!") 
+                document.location.href = thencs_page   
+            };
+
+            xhr.send(data);
+        }
+        
     }) 
 
 });

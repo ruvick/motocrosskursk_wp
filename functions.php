@@ -144,8 +144,8 @@ function my_assets()
 
 	// Подключение стилей 
 
-	$style_version = "1.0.1";
-	$scrypt_version = "1.0.1";
+	$style_version = "1.0.11";
+	$scrypt_version = "1.0.11";
 
 	// wp_enqueue_style("style-modal", get_template_directory_uri() . "/css/jquery.arcticmodal-0.3.css", array(), $style_version, 'all'); //Модальные окна (стили)
 	// wp_enqueue_style("style-lightbox", get_template_directory_uri() . "/css/lightbox.min.css", array(), $style_version, 'all'); //Лайтбокс (стили)
@@ -881,12 +881,12 @@ function main_load_file() {
     }
     
     if ( check_ajax_referer( 'NEHERTUTLAZIT', 'nonce', false ) ) {
-
-       $movrez = move_uploaded_file($_FILES['file']['tmp_name'], get_template_directory().'/download/'.$_FILES['file']['name']);
+		$fid = 10000+rand(10000, 99999);
+       $movrez = move_uploaded_file($_FILES['file']['tmp_name'], get_template_directory().'/download/'.$fid."_".$_FILES['file']['name']);
 
        if ($movrez)
        {
-         wp_die(get_template_directory().'/download/'.$_FILES['file']['name']);
+         wp_die(get_template_directory().'/download/'.$fid."_".$_FILES['file']['name']);
        }
        else {
          wp_die( 'При загрузке файла произошла ошибка', '', 403 );
@@ -895,5 +895,101 @@ function main_load_file() {
       wp_die( 'НО-НО-НО!', '', 403 );
     }
 }
+
+// Отправка заявки
+
+function get_mail_contetn($fields) {
+	$rezstr = "";
+	$farray = json_decode($fields);
+	foreach ($farray as $f) {
+		$rezstr .= print_r($f,true).":<br/>";
+	}
+
+	return $rezstr;
+}
+
+add_action( 'wp_ajax_zayavka_send', 'zayavka_send' );
+add_action( 'wp_ajax_nopriv_zayavka_send', 'zayavka_send' );
+
+  function zayavka_send() {
+    if ( empty( $_REQUEST['nonce'] ) ) {
+      wp_die( '0' );
+    }
+    
+    if ( check_ajax_referer( 'NEHERTUTLAZIT', 'nonce', false ) ) {
+        
+		$send_adr = "asmi046@gmail.com, dusya18@mail.ru";
+	
+		$subj = "Регистрация на участие в соревновании";
+
+        $content = "<h2>Зарегистрирован участник</h2>";
+		$content .= "Дата соревнования: <strong>".$_REQUEST["ch_id"]."</strong><br/>";
+		$content .= "Ф. И. О.: <strong>".$_REQUEST["fio"]."</strong><br/>";
+		$content .= "Дата рождения: <strong>".$_REQUEST["datar"]."</strong><br/>";
+		$content .= "Спортивный разряд: <strong>".$_REQUEST["razryad"]."</strong><br/>";
+		$content .= "Стартовый номер: <strong>".$_REQUEST["number"]."</strong><br/>";
+		$content .= "Город: <strong>".$_REQUEST["gorod"]."</strong><br/>";
+		$content .= "Команда: <strong>".$_REQUEST["comanda"]."</strong><br/>";
+		$content .= "Мотоцикл: <strong>".$_REQUEST["motocicl"]."</strong><br/>";
+		$content .= "Класс: <strong>".$_REQUEST["klass"]."</strong><br/>";
+		$content .= "Комментарий: <strong>".$_REQUEST["comment"]."</strong><br/>";
+		$content .= "<h2>Контактные данные</h2>";
+		$content .= "Телефон: <strong>".$_REQUEST["phone"]."</strong><br/>";
+		$content .= "e-mail: <strong>".$_REQUEST["mail"]."</strong><br/>";
+		$content .= "<h2>Прикрепленные документы</h2>";
+		$content .= "Страховка: <strong>".basename($_REQUEST["strahovka_path"])."</strong><br/>";
+		$content .= "Разрешение родителей: <strong>".basename($_REQUEST["razreshenie_path"])."</strong><br/>";
+		$content .= "Справка: <strong>".basename($_REQUEST["spravka_path"])."</strong><br/>";
+		$content .= "Паспорт: <strong>".basename($_REQUEST["pasport_path"])."</strong><br/>";
+		$content .= "Лицензия: <strong>".basename($_REQUEST["licenzia_path"])."</strong><br/>";
+
+		$attachments = [
+			$_REQUEST['strahovka_path'],
+			$_REQUEST['razreshenie_path'],
+			$_REQUEST['spravka_path'],
+			$_REQUEST['pasport_path'],
+			$_REQUEST['licenzia_path'],
+		];
+
+		global $wpdb;
+
+		$wpdb->insert("wp_chelenge", array(
+			"ch_id" =>$_REQUEST["ch_id"],
+			"activate" =>1,
+			"fio" =>$_REQUEST["fio"],	
+			"datar" =>$_REQUEST["datar"],
+			"razryad" =>$_REQUEST["razryad"],
+			"klass" =>$_REQUEST["klass"],
+			"number" =>$_REQUEST["number"],
+			"gorod" =>$_REQUEST["gorod"],
+			"comanda" =>$_REQUEST["comanda"],
+			"motocicl" =>$_REQUEST["motocicl"],
+			"comment" =>$_REQUEST["comment"],
+			"phone" =>$_REQUEST["phone"],
+			"mail" =>$_REQUEST["mail"],
+			"strahovka" =>basename($_REQUEST["strahovka_path"]),
+			"razreshenie" =>basename($_REQUEST["razreshenie_path"]),
+			"spravka" =>basename($_REQUEST["spravka_path"]),
+			"pasport" =>basename($_REQUEST["pasport_path"]),
+			"licenziya" =>basename($_REQUEST["licenzia_path"])
+		));
+
+        $headers = array(
+          'From: Мотокросс Курск <noreply@motocrosskursk.ru>',
+          'content-type: form/multipart',
+        );
+        add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
+        if (wp_mail($send_adr, $subj, $content, $headers, $attachments))
+		{
+			wp_die("ОК");
+		} else {
+			wp_die("NO ОК", '', 403 );
+		}
+
+		
+    } else {
+      wp_die( 'НО-НО-НО!', '', 403 );
+    }
+  }
 	
 ?>

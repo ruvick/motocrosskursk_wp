@@ -122,6 +122,13 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
           ->set_width(50),
     ) );
 
+    Container::make('post_meta', 'single_arch', 'Доп поля архив соревнований')
+	    ->show_on_template('single-arch.php')
+	    ->add_fields(array(
+		    Field::make('text', 'custom_post_date', 'Дата для карточки')->set_width(50),
+		    Field::make('text', 'custom_post_adress', 'Адрес для карточки')->set_width(50),
+      ));
+
     Container::make('post_meta', 'single', 'Доп поля карточки')
 	    ->show_on_template('single-competition.php')
 	    ->add_fields(array(

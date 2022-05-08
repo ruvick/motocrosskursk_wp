@@ -98,7 +98,7 @@ get_header(); ?>
     <form id = "zayavka_form" action="#" class="application__form">
 
       <div class="application__form-line form__line">
-        <input type = "hidden" name = "ch_id" value = "<? echo $data." ".$month." ".$year?>">
+        <input type = "hidden" data-valuem="ID соревнования" name = "ch_id" value = "<? echo $ch_id = $data." ".$month." ".$year?>">
         
         <input required value = "" id="name" autocomplete="off" type="text" name="fio" data-error="Заполните поле" placeholder = "Фамилия Имя Отчество" data-valuem="Фамилия Имя Отчество" class="input _req">
         
@@ -108,15 +108,15 @@ get_header(); ?>
 
 
         <select name="klass" class="form input input_select">
-          <option value="" disabled selected="selected">Класс</option>
-          <option value="2">125 см3 (0910161811Г) (мужчины) — с 15 лет (15 лет – 2007 г. р.),</option>
-          <option value="3">250 см3 (0910171811М) (мужчины) — с 15 лет (15 лет – 2007 г. р.)</option>
-          <option value="4">“Открытый” (0910281811Л) – с 35 лет (35 лет – 1987 г.р.).</option>
-          <option value="2">50 см3 (0910131811Н) (младшие мальчики) — 6 — 8 лет (с 2016 по 2014 г.р., + родившиеся после 01.10.2013 г.р.)</option>
-          <option value="3">65 см3 (0910141811Н) (мальчики) —  8 — 10 лет (с 2014 по 2012 г.р.)</option>
-          <option value="3">65 см3 (0910141811Н) (юноши, девушки) — 10 — 12 лет (с 2012 по 2010 г.р.)</option>
-          <option value="3">85 см3 (0910151811Н) (юноши, девушки) —  11 — 15 лет, (с 2011 по 2007 г.р.)</option>
-          <option value="3">125 см3 (0910161811Г/юноши) – 13-17 лет (с 2009 по 2005 г.р.)</option>
+          <!-- <option value="" disabled selected="selected">Класс</option> -->
+          <option value="125 см3 (0910161811Г) (мужчины) — с 15 лет (15 лет – 2007 г. р.)" selected>125 см3 (0910161811Г) (мужчины) — с 15 лет (15 лет – 2007 г. р.)</option>
+          <option value="250 см3 (0910171811М) (мужчины) — с 15 лет (15 лет – 2007 г. р.)">250 см3 (0910171811М) (мужчины) — с 15 лет (15 лет – 2007 г. р.)</option>
+          <option value="“Открытый” (0910281811Л) – с 35 лет (35 лет – 1987 г.р.)">“Открытый” (0910281811Л) – с 35 лет (35 лет – 1987 г.р.)</option>
+          <option value="50 см3 (0910131811Н) (младшие мальчики) — 6 — 8 лет (с 2016 по 2014 г.р., + родившиеся после 01.10.2013 г.р.)">50 см3 (0910131811Н) (младшие мальчики) — 6 — 8 лет (с 2016 по 2014 г.р., + родившиеся после 01.10.2013 г.р.)</option>
+          <option value="65 см3 (0910141811Н) (мальчики) —  8 — 10 лет (с 2014 по 2012 г.р.)">65 см3 (0910141811Н) (мальчики) —  8 — 10 лет (с 2014 по 2012 г.р.)</option>
+          <option value="65 см3 (0910141811Н) (юноши, девушки) — 10 — 12 лет (с 2012 по 2010 г.р.)">65 см3 (0910141811Н) (юноши, девушки) — 10 — 12 лет (с 2012 по 2010 г.р.)</option>
+          <option value="85 см3 (0910151811Н) (юноши, девушки) —  11 — 15 лет, (с 2011 по 2007 г.р.)">85 см3 (0910151811Н) (юноши, девушки) —  11 — 15 лет, (с 2011 по 2007 г.р.)</option>
+          <option value="125 см3 (0910161811Г/юноши) – 13-17 лет (с 2009 по 2005 г.р.)">125 см3 (0910161811Г/юноши) – 13-17 лет (с 2009 по 2005 г.р.)</option>
         </select>
 
         <input required value = "" id="name" autocomplete="off" type="text" name="number" data-error="Заполните поле" placeholder = "Стартовый номер" data-valuem="Стартовый номер" class="input _req">
@@ -138,22 +138,35 @@ get_header(); ?>
         <h4 class="application__form-block-title">Документы</h4>
         <div class="application__form-line form__line">
           <div class="input file_input_wrap">
-            <input id="strahovka" autocomplete="off" type="file" name="strahovka" data-error="Заполните поле" data-value="Страховка" data-filenameinput = "file-path_strahovka" data-filenamelabel = "label_strahovka" class="_req">
+            <input id="strahovka" autocomplete="off" type="file" name="strahovka" data-error="Заполните поле" data-valuem="Страховка" data-filenameinput = "file-path_strahovka" data-filenamelabel = "label_strahovka" class="_req">
             <label id = "label_strahovka" for="strahovka">Страховка (загрузить файл)</label>
-            <input type="hidden" id = "file-path_strahovka" class="file-path_strahovka" value="">
+            <input name = "strahovka_path" type="hidden" id = "file-path_strahovka" class="file-path_strahovka" value="">
           </div>
           
           <div class="input file_input_wrap">
-            <input id="razreshenie" autocomplete="off" type="file" name="razreshenie" data-error="Заполните поле" data-value="Разрешение родителей*" data-filenameinput = "file-path_razreshenie" data-filenamelabel = "label_razreshenie" class="_req">
+            <input id="razreshenie" autocomplete="off" type="file" name="razreshenie" data-error="Заполните поле" data-valuem="Разрешение родителей*" data-filenameinput = "file-path_razreshenie" data-filenamelabel = "label_razreshenie" class="_req">
             <label id = "label_razreshenie" for="razreshenie">Разрешение родителей (загрузить файл)</label>
-            <input type="hidden" id="file-path_razreshenie" class="file-path_razreshenie" value="">
+            <input  name = "razreshenie_path" type="hidden" id="file-path_razreshenie" class="file-path_razreshenie" value="">
           </div>
           
           <div class="input file_input_wrap">
-            <input id="spravka" autocomplete="off" type="file" name="spravka" data-error="Заполните поле" data-value="Медицинская справка" data-filenameinput = "file-path_spravka" data-filenamelabel = "label_spravka" class="_req">
+            <input id="spravka" autocomplete="off" type="file" name="spravka" data-error="Заполните поле" data-valuem="Медицинская справка" data-filenameinput = "file-path_spravka" data-filenamelabel = "label_spravka" class="_req">
             <label id = "label_spravka" for="spravka">Медицинская справка (загрузить файл)</label>
-            <input type="hidden" id="file-path_spravka" class="file-path_spravka" value="">
+            <input name = "spravka_path" type="hidden" id="file-path_spravka" class="file-path_spravka" value="">
           </div>
+
+          <div class="input file_input_wrap">
+            <input id="pasport" autocomplete="off" type="file" name="pasport" data-error="Заполните поле" data-valuem="Паспорт / свидетельство о рождении" data-filenameinput = "file-path_pasport" data-filenamelabel = "label_pasport" class="_req">
+            <label id = "label_pasport" for="pasport">Паспорт / свидетельство о рождении</label>
+            <input  name = "pasport_path" type="hidden" id="file-path_pasport" class="file-path_pasport" value="">
+          </div>
+
+          <div class="input file_input_wrap">
+            <input id="licenzia" autocomplete="off" type="file" name="licenzia" data-error="Заполните поле" data-valuem="Спортивное разрешение (Лицензия)" data-filenameinput = "file-path_licenzia" data-filenamelabel = "label_licenzia" class="_req">
+            <label id = "label_licenzia" for="licenzia">Спортивное разрешение (Лицензия)</label>
+            <input  name = "licenzia_path" type="hidden" id="file-path_licenzia" class="file-path_licenzia" value="">
+          </div>
+
         </div>
         <p class="application__form-block-title-footnote">*Нотариально заверенное разрешение от обоих родителей
           (для спортсменов, не достигших 18 лет)</p>
@@ -174,8 +187,24 @@ get_header(); ?>
   <div class="_container">
     <h2 class="list-registered__title">Список зарегистрированных участников</h2>
 
-    <div class="list-registered__block">
-      <h4 class="list-registered__block-class">Класс 50 см3</h4>
+    <?
+      global $wpdb;
+      $classes = $wpdb->get_results('SELECT `klass` FROM `wp_chelenge` WHERE `ch_id` = "'.$ch_id.'" AND `activate` != 0 GROUP BY `klass`');
+    ?>
+<?
+if (empty($classes)) {
+?>
+  <h3>Пока ни кто не зарегистрировался</h3>
+<?
+}
+
+foreach ($classes as $cl) {
+?>
+<div class="list-registered__block">
+      <h4 class="list-registered__block-class"><? echo $cl->klass;?></h4>
+      <?
+        $reicers = $wpdb->get_results('SELECT * FROM `wp_chelenge` WHERE `ch_id` = "'.$ch_id.'" AND `activate` != 0 AND `klass` = "'.$cl->klass.'"');
+      ?>
 
       <table class="list-registered__table">
         <thead class="list-registered__table-thead">
@@ -188,132 +217,31 @@ get_header(); ?>
           </tr>
         </thead>
         <tbody class="list-registered__table-tbody">
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">1</td>
-            <td class="list-registered__table-tbody-td">Анисов Александр Николаевич</td>
-            <td class="list-registered__table-tbody-td">Брянск</td>
-            <td class="list-registered__table-tbody-td">150</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">2</td>
-            <td class="list-registered__table-tbody-td">Арцукевич Анатолий Семенович</td>
-            <td class="list-registered__table-tbody-td">Гродно, Беларусь</td>
-            <td class="list-registered__table-tbody-td">153</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450 FGFTU</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">1</td>
-            <td class="list-registered__table-tbody-td">Анисов Александр Николаевич</td>
-            <td class="list-registered__table-tbody-td">Брянск</td>
-            <td class="list-registered__table-tbody-td">150</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">2</td>
-            <td class="list-registered__table-tbody-td">Арцукевич Анатолий Семенович</td>
-            <td class="list-registered__table-tbody-td">Гродно, Беларусь</td>
-            <td class="list-registered__table-tbody-td">153</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450 FGFTU</td>
-          </tr>
+        <?
+        $i = 1;
+          foreach($reicers as $r)  {
+        ?>
+            <tr class="list-registered__table-tbody-tr">
+              <td class="list-registered__table-tbody-td"><span class = "mobile_comment">№ п/п</span><span class = "all_value"><? echo $i;?></span></td>
+              <td class="list-registered__table-tbody-td"><span class = "mobile_comment">Ф.И.О.</span><span class = "all_value"><? echo $r->fio;?></span></td>
+              <td class="list-registered__table-tbody-td"><span class = "mobile_comment">Город</span><span class = "all_value"><? echo $r->gorod;?></span></td>
+              <td class="list-registered__table-tbody-td"><span class = "mobile_comment">Стартовый номер</span><span class = "all_value"><? echo $r->number;?></span></td>
+              <td class="list-registered__table-tbody-td"><span class = "mobile_comment">Мотоцикл</span><span class = "all_value"><? echo $r->motocicl;?></span></td>
+            </tr> 
+        <?
+            $i++;
+          }
+        ?>
+
         </tbody>
       </table>
 
-    </div>
+</div>
+<?
+}
+?>
 
-    <div class="list-registered__block">
-      <h4 class="list-registered__block-class">Класс 65 см3</h4>
 
-      <table class="list-registered__table">
-        <thead class="list-registered__table-thead">
-          <tr class="list-registered__table-thead-tr list-registered__table-thead-tr-top">
-            <td class="list-registered__table-thead-td">№ п/п</td>
-            <td class="list-registered__table-thead-td">Ф.И.О.</td>
-            <td class="list-registered__table-thead-td">Город</td>
-            <td class="list-registered__table-thead-td">Стартовый<br>номер</td>
-            <td class="list-registered__table-thead-td">Мотоцикл</td>
-          </tr>
-        </thead>
-        <tbody class="list-registered__table-tbody">
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">1</td>
-            <td class="list-registered__table-tbody-td">Анисов Александр Николаевич</td>
-            <td class="list-registered__table-tbody-td">Брянск</td>
-            <td class="list-registered__table-tbody-td">150</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">2</td>
-            <td class="list-registered__table-tbody-td">Арцукевич Анатолий Семенович</td>
-            <td class="list-registered__table-tbody-td">Гродно, Беларусь</td>
-            <td class="list-registered__table-tbody-td">153</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450 FGFTU</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">1</td>
-            <td class="list-registered__table-tbody-td">Анисов Александр Николаевич</td>
-            <td class="list-registered__table-tbody-td">Брянск</td>
-            <td class="list-registered__table-tbody-td">150</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">2</td>
-            <td class="list-registered__table-tbody-td">Арцукевич Анатолий Семенович</td>
-            <td class="list-registered__table-tbody-td">Гродно, Беларусь</td>
-            <td class="list-registered__table-tbody-td">153</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450 FGFTU</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div class="list-registered__block">
-      <h4 class="list-registered__block-class">Класс 85 см3</h4>
-
-      <table class="list-registered__table">
-        <thead class="list-registered__table-thead">
-          <tr class="list-registered__table-thead-tr list-registered__table-thead-tr-top">
-            <td class="list-registered__table-thead-td">№ п/п</td>
-            <td class="list-registered__table-thead-td">Ф.И.О.</td>
-            <td class="list-registered__table-thead-td">Город</td>
-            <td class="list-registered__table-thead-td">Стартовый<br>номер</td>
-            <td class="list-registered__table-thead-td">Мотоцикл</td>
-          </tr>
-        </thead>
-        <tbody class="list-registered__table-tbody">
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">1</td>
-            <td class="list-registered__table-tbody-td">Анисов Александр Николаевич</td>
-            <td class="list-registered__table-tbody-td">Брянск</td>
-            <td class="list-registered__table-tbody-td">150</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">2</td>
-            <td class="list-registered__table-tbody-td">Арцукевич Анатолий Семенович</td>
-            <td class="list-registered__table-tbody-td">Гродно, Беларусь</td>
-            <td class="list-registered__table-tbody-td">153</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450 FGFTU</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">1</td>
-            <td class="list-registered__table-tbody-td">Анисов Александр Николаевич</td>
-            <td class="list-registered__table-tbody-td">Брянск</td>
-            <td class="list-registered__table-tbody-td">150</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450</td>
-          </tr>
-          <tr class="list-registered__table-tbody-tr">
-            <td class="list-registered__table-tbody-td">2</td>
-            <td class="list-registered__table-tbody-td">Арцукевич Анатолий Семенович</td>
-            <td class="list-registered__table-tbody-td">Гродно, Беларусь</td>
-            <td class="list-registered__table-tbody-td">153</td>
-            <td class="list-registered__table-tbody-td">Yamaha 450 FGFTU</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
 
   </div>
 </section>

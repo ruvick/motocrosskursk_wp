@@ -16,7 +16,8 @@
 		<div class="banner__flex d-flex">
 
 			<div class="banner__flex-descp">
-				<h1 class="banner__title">
+				<h1 class="banner__title">"ФМС" Курск</h1>
+				<h2 class="banner_sub_title">
 					<?php echo carbon_get_theme_option('banner_title'); ?>
 				</h1>
 				<div class="banner__flex-descp-btn d-flex">

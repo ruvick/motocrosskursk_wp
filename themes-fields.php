@@ -32,6 +32,11 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       Field::make('text', 'about_home_title', 'Заголовок на главной'), 
       Field::make('rich_text', 'about_home', 'О нашей компании')
     ))
+
+    ->add_tab('Текущее соревнование', array(
+      Field::make('text', 'ch_id', 'ID текущего соревнования'), 
+    ))
+
     // ->add_tab('Слайдер', array(
     //   Field::make('complex', 'slider_index', 'Слайдер на главной')
     //     ->add_fields(array(

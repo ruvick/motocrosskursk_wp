@@ -43,6 +43,7 @@ if (!empty($_REQUEST["klass"])) {
         $worksheet->setCellValue('H'.(12+$i), $elem->motocicl);
         
         
+
         $i++;
     }
 

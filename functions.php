@@ -144,8 +144,8 @@ function my_assets()
 
 	// Подключение стилей 
 
-	$style_version = "1.0.11";
-	$scrypt_version = "1.0.11";
+	$style_version = "1.0.112";
+	$scrypt_version = "1.0.112";
 
 	// wp_enqueue_style("style-modal", get_template_directory_uri() . "/css/jquery.arcticmodal-0.3.css", array(), $style_version, 'all'); //Модальные окна (стили)
 	// wp_enqueue_style("style-lightbox", get_template_directory_uri() . "/css/lightbox.min.css", array(), $style_version, 'all'); //Лайтбокс (стили)
@@ -158,6 +158,8 @@ function my_assets()
 
 	wp_enqueue_script('jquery'); 
 
+	wp_enqueue_script('lightbox', get_template_directory_uri() . '/js/fslightbox.js', array(), $scrypt_version, true); // Подключение скрипта отправки заявки
+
 	// wp_enqueue_script('amodal', get_template_directory_uri() . '/js/jquery.arcticmodal-0.3.min.js', array(), $scrypt_version, true); //Модальные окна
 	// wp_enqueue_script('mask', get_template_directory_uri() . '/js/jquery.inputmask.bundle.js', array(), $scrypt_version, true); //маска для инпутов
 	// wp_enqueue_script('lightbox', get_template_directory_uri() . '/js/lightbox.min.js', array(), $scrypt_version, true); //Лайтбокс
@@ -168,7 +170,7 @@ function my_assets()
 
 	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), $scrypt_version, true); // Подключение основного скрипта в самом конце
 	wp_enqueue_script('otpravka', get_template_directory_uri() . '/js/sende_zayavka.js', array(), $scrypt_version, true); // Подключение скрипта отправки заявки
-
+	
 	if ( is_page(17)) // Корзина
 	{
 		wp_enqueue_script( 'vue', get_template_directory_uri().'/js/vue.js', array(), $scrypt_version, true);

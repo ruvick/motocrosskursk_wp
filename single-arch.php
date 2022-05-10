@@ -18,7 +18,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="content page-recurring">
+<section class="content page-recurring galery_lb_set">
   	<div class="_container">
   		<?php
 				if ( function_exists('yoast_breadcrumb') ) {

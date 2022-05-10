@@ -37,11 +37,11 @@ get_header(); ?>
 				global $wpdb;
 				$classes = $wpdb->get_results('SELECT `klass` FROM `wp_chelenge` WHERE `ch_id` = "'.$chid.'" AND `activate` != 0 GROUP BY `klass`');
 				
-				$baseUrl = "https://motocrosskursk.ru/wp-content/themes/motocrosskursk/protocol/kp.php?klass=65 см3 (0910141811Н) (мальчики) - 8 - 10 лет (с 2014 по 2012 г.р.)&chid=27-29 мая 2022";
+				$baseUrl = "https://motocrosskursk.ru/wp-content/themes/motocrosskursk/protocol/kp.php";
 
 				foreach ($classes as $cl) {
 			?>	
-				<a href="<?echo $baseUrl?>?klass=<?echo $cl->klass;?>&chid=<?echo $chid;?>">Скачать протокол в классе - <?echo $cl->klass;?></a>	
+				<a href="<?echo $baseUrl?>?klass=<?echo $cl->klass;?>&chid=<?echo $chid;?>">Скачать протокол в классе - <?echo $cl->klass;?></a> <br/>	
 			<?}?>
 		</div>
 	</section>

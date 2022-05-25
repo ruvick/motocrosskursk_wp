@@ -189,7 +189,7 @@ get_header(); ?>
 
     <?
       global $wpdb;
-      $classes = $wpdb->get_results('SELECT `klass` FROM `wp_chelenge` WHERE `ch_id` = "'.$ch_id.'" AND `activate` != 0 GROUP BY `klass`');
+      $classes = $wpdb->get_results('SELECT `klass`, `ord` FROM `wp_chelenge` LEFT JOIN `wp_class_order` ON `wp_class_order`.`name` = `wp_chelenge`.`klass` WHERE `ch_id` = "'.$ch_id.'" AND `activate` != 0 GROUP BY `klass` ORDER BY `ord` ASC');
     ?>
 <?
 if (empty($classes)) {

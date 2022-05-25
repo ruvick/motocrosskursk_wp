@@ -41,7 +41,15 @@ get_header(); ?>
 
 				foreach ($classes as $cl) {
 			?>	
-				<a href="<?echo $baseUrl?>?klass=<?echo $cl->klass;?>&chid=<?echo $chid;?>">Скачать протокол в классе - <?echo $cl->klass;?></a> <br/>	
+				<?
+					$get_q = http_build_query(
+						[
+							"klass" => $cl->klass,
+							"chid" => $chid,
+						]
+					);
+				?>
+				<a href="<?echo $baseUrl."?".$get_q;?>">Скачать протокол в классе - <?echo $cl->klass;?></a> <br/>	
 			<?}?>
 		</div>
 	</section>

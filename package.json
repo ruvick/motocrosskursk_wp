@@ -8,7 +8,7 @@
     "clear_r": "ssh kvakur5l_all@kvakur5l.beget.tech \"rm motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/*.*\"",
     "send_r": "scp -C *.php *.png *.css kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "send_ms": "scp -C *.css kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
-    "send_one": "scp -C single-arch.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
+    "send_one": "scp -C page-protokol.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "send_one1": "scp -C single-competition.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "send_field": "scp -C themes-fields.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "send_head": "scp -C header.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",

@@ -22,10 +22,10 @@ if (!empty($_REQUEST["klass"])) {
     $worksheet->setCellValue('A8', $_REQUEST["klass"] . " на " .date("d.m.Y"));
 
     global $wpdb;
-    
-    $reicers = $wpdb->get_results('SELECT * FROM `wp_chelenge` WHERE `ch_id` = "'.$_REQUEST["chid"].'" AND `activate` != 0 AND `klass` = "'.$_REQUEST["klass"].'"');
+    $q = 'SELECT * FROM `wp_chelenge` WHERE `ch_id` = "'.$_REQUEST["chid"].'" AND `activate` != 0 AND `klass` = "'.$_REQUEST["klass"].'"';
+    $reicers = $wpdb->get_results($q);
   
-    // print_r('SELECT * FROM `wp_chelenge` WHERE `ch_id` = "'.$_REQUEST["chid"].'" AND `activate` != 0 AND `klass` = "'.$_REQUEST["klass"].'"');
+    // print_r($q);
     // return;
 
     $i = 0; 

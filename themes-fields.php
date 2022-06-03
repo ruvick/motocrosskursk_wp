@@ -132,6 +132,8 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
 	    ->add_fields(array(
 		    Field::make('text', 'custom_post_date', 'Дата для карточки')->set_width(50),
 		    Field::make('text', 'custom_post_adress', 'Адрес для карточки')->set_width(50),
+        Field::make('file', 'kubok_rossii', 'Кубок России мотокросс Курск 3 этап')->set_width(50),
+        Field::make('file', 'rezultaty_chempionat', 'Результаты Чемпионат и первенство Курской области')->set_width(50),
       ));
 
     Container::make('post_meta', 'single', 'Доп поля карточки')

@@ -399,18 +399,18 @@ textarea:focus {
   border-radius: 3px;
 }
 
-.file_input_wrap input{
+.file_input_wrap input {
   display: none;
 }
 
-.file_input_wrap label{ 
+.file_input_wrap label {
   margin-top: auto;
   margin-bottom: auto;
   width: 100%;
 }
 
 .input_select {
-  border:none;
+  border: none;
   padding: 0;
 }
 
@@ -3897,7 +3897,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .banner_sub_title {
-  color:white;
+  color: white;
   font-size: 1.5em;
   margin-bottom: 20px;
 }
@@ -4151,9 +4151,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .card-compet__card-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 258px;
-  flex: 0 1 258px;
+  -ms-flex: 0 0 258px;
+  flex: 0 0 258px;
   height: 260px;
   margin-right: 40px;
 }
@@ -4657,21 +4656,37 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 
 
-.text_style h3{
+.text_style h3 {
   margin: 20px 0;
   font-size: 1em;
 }
 
-.text_style ul{
+.text_style ul {
   padding-left: 10px;
   margin-left: 10px;
-  
+
 }
 
-.text_style ul li{ 
+.text_style ul li {
   margin: 5px 0;
   list-style: disc;
 }
+
+.arch-block-plach {
+  margin-bottom: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4789,10 +4804,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     display: flex;
     flex-direction: column;
   }
-  .list-registered__table-tbody-td .mobile_comment{
+
+  .list-registered__table-tbody-td .mobile_comment {
     display: block;
     font-weight: 600;
   }
+
   .list-registered__table-tbody-td {
     padding: 15px 25px;
     display: flex;
@@ -4800,7 +4817,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     border-bottom: 1px dotted gray;
   }
 
-  .list-registered__table-tbody-tr .list-registered__table-tbody-td:last-child{ 
+  .list-registered__table-tbody-tr .list-registered__table-tbody-td:last-child {
     border-bottom: 3px solid black;
   }
 }
@@ -5071,7 +5088,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     text-align: center;
   }
 
-  .banner_sub_title { 
+  .banner_sub_title {
     text-align: center;
   }
 
@@ -5082,10 +5099,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner__flex-descp {
     margin-bottom: 15px;
-    width:100%;
+    width: 100%;
   }
 
-  .header__contacts { 
+  .header__contacts {
     flex: 0 0 145px;
   }
 

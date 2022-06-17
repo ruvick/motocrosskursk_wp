@@ -47,6 +47,13 @@ get_header(); ?>
         <?}?>
       </div>
 
+			<!-- <div class="arch-block-video-report">
+				<h2 class="arch-block-video-report__title">Видеоотчет</h2>
+				<div class="arch-block-video-report__file">
+					<video src="<?php echo get_template_directory_uri();?>/img/video/01.mp4"></video>
+				</div>
+			</div> -->
+
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<?php the_content();?>
 					<?php endwhile;?>

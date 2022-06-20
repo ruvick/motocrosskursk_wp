@@ -4691,7 +4691,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   height: auto;
 }
 
-
+.wp-block-embed iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 650px;
+  margin-bottom: 25px;
+}
 
 
 
@@ -4894,8 +4899,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .header__contacts {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 135px;
-    flex: 0 0 135px;
+    -ms-flex: 0 0 145px;
+    flex: 0 0 145px;
     margin-right: 15px;
   }
 
@@ -5013,9 +5018,9 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     flex: 0 1 100%;
   }
 
-
-
-
+  .wp-block-embed iframe {
+    height: 450px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -5076,6 +5081,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   .footer__mail:before,
   .footer__phone:before {
     display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .wp-block-embed iframe {
+    height: 300px;
   }
 }
 
@@ -5197,6 +5208,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .competitions__card-descp-flex-btn {
     width: 100%;
+  }
+
+  .wp-block-embed iframe {
+    height: 200px;
   }
 }
 

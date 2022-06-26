@@ -27,32 +27,25 @@ get_header(); ?>
 			?> 
 
 			<div class="arch-block-plach about-competition__row">
-        <?
-				  $kubokR = carbon_get_the_post_meta('kubok_rossii');
-          $rezultChemp = carbon_get_the_post_meta('rezultaty_chempionat');
-        ?>
-
-        <? if ($kubokR) {?>
-          <a href="<?echo wp_get_attachment_url($kubokR);?>" class="about-competition__item">
-            <span class="about-competition__item-icon about-competition__item-icon-01"></span>
-            <p class="about-competition__item-descp">Кубок России мотокросс Курск 3 этап</p>
-          </a>
-        <?}?>
-
-        <? if ($rezultChemp) {?>
-          <a href="<?echo wp_get_attachment_url($rezultChemp);?>" class="about-competition__item">
-            <span class="about-competition__item-icon about-competition__item-icon-02"></span>
-            <p class="about-competition__item-descp">Результаты Чемпионат и первенство Курской области по мотокроссу 28-29 мая 2022</p>
-          </a>
-        <?}?>
-      </div>
-
-			<!-- <div class="arch-block-video-report">
-				<h2 class="arch-block-video-report__title">Видеоотчет</h2>
-				<div class="arch-block-video-report__file">
-					<video src="<?php echo get_template_directory_uri();?>/img/video/01.mp4"></video>
-				</div>
-			</div> -->
+				<? 
+		      $file = carbon_get_post_meta(get_the_ID(),"file_complex"); 
+	          if ($file) {
+		      $fileIndex = 0;
+		        foreach ($file as $item) {
+			  ?>
+					<?php
+						printf('
+              <a href="%s" download class="about-competition__item">
+                <span class="about-competition__item-icon about-competition__item-icon-01"></span>
+                <p class="about-competition__item-descp">' . $item['file_complex_name'] . '</p>
+              </a>', $item['file_complex_link']);
+				?>
+			  <?
+			      	$fileIndex++; 
+		        }
+	        }
+	      ?>
+      </div> 
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<?php the_content();?>

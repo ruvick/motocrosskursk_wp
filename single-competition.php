@@ -45,12 +45,11 @@ get_header(); ?>
 
 <section class="page-recurring">
   <div class="_container">
-  <?php
-				if ( function_exists('yoast_breadcrumb') ) {
-					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
-				}
-			?> 
-
+    <?php
+			if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
+			}
+		?> 
     <div class="about-competition">
       <h2 class="about-competition__title">О соревновании</h2>
       
@@ -58,27 +57,25 @@ get_header(); ?>
         <?php the_content(); ?>
       </div>
       
-      
       <div class="about-competition__row">
-        <?
-          $fiz = carbon_get_the_post_meta('fiz_meropriyatiya');
-          $polozg = carbon_get_the_post_meta('pologenie');
-
-        ?>
-
-        <? if ($polozg) {?>
-          <a href="<?echo wp_get_attachment_url($polozg);?>" class="about-competition__item">
-            <span class="about-competition__item-icon about-competition__item-icon-01"></span>
-            <p class="about-competition__item-descp">Положение о проведении мероприятия</p>
-          </a>
-        <?}?>
-
-        <? if ($fiz) {?>
-          <a href="<?echo wp_get_attachment_url($fiz);?>" class="about-competition__item">
-            <span class="about-competition__item-icon about-competition__item-icon-02"></span>
-            <p class="about-competition__item-descp">Физкультурные мероприятия</p>
-          </a>
-        <?}?>
+        <? 
+		      $file = carbon_get_post_meta(get_the_ID(),"file_complex"); 
+	          if ($file) {
+		      $fileIndex = 0;
+		        foreach ($file as $item) {
+			  ?>
+					<?php
+						printf('
+              <a href="%s" download class="about-competition__item">
+                <span class="about-competition__item-icon about-competition__item-icon-01"></span>
+                <p class="about-competition__item-descp">' . $item['file_complex_name'] . '</p>
+              </a>', $item['file_complex_link']);
+					?>
+			  <?
+			        $fileIndex++; 
+		        }
+	        }
+	      ?>
       </div>
     </div>
 

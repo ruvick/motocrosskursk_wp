@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/header-section');?> 
 
-<main class="page">
+<main class="main-page page">
 
 <?php 
 		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('sor_banner_img'), 'full')[0];

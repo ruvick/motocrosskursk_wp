@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/header-section');?>  
 
-<main class="page"> 
+<main class="main-page page">
 
 <section id="banner-narrow" class="banner-narrow">
 	<div class="nuar_blk"></div>
@@ -41,7 +41,7 @@ get_header(); ?>
               </a>', $item['file_complex_link']);
 				?>
 			  <?
-			      	$fileIndex++; 
+			      	$fileIndex++;   
 		        }
 	        }
 	      ?>

@@ -3744,7 +3744,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .mob-menu {
   position: fixed;
-  z-index: 500;
+  z-index: 550;
   top: 0;
   right: -100%;
   width: 50%;
@@ -4698,7 +4698,9 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   margin-bottom: 25px;
 }
 
-
+.competitions__text {
+  margin-bottom: 20px;
+}
 
 
 
@@ -5020,6 +5022,18 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .wp-block-embed iframe {
     height: 450px;
+  }
+
+  .main-page {
+    padding-top: 50px;
+  }
+
+  .banner-narrow {
+    padding: 35px 0 !important;
+  }
+
+  #breadcrumbs {
+    margin-bottom: 10px;
   }
 }
 

@@ -57,11 +57,11 @@ get_header(); ?>
 					foreach( $posts as $post ){
 			?>
 				<?php get_template_part('template-parts/sorevnovania');?> 
+			<? } ?>
 		</div>
 
 	</div>
 </section>
-<? } ?>
 
 
 </main>

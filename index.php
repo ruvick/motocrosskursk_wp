@@ -88,9 +88,10 @@
 
 				$result = wp_get_recent_posts( $args );
 
-					foreach( $posts as $post )
-			?>
-				<?php get_template_part('template-parts/sorevnovania');?> 
+					foreach( $posts as $post ){
+						?>
+							<?php get_template_part('template-parts/sorevnovania');?> 
+						<? } ?>
 		</div>
 
 	</div>

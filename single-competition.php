@@ -26,9 +26,25 @@ get_header(); ?>
 				<h1 class="banner__title">
 					<?php echo carbon_get_the_post_meta('sor_banner_title'); ?>
 				</h1>
-				<div class="banner__flex-descp-btn d-flex">
-					<a href="<?php echo carbon_get_the_post_meta('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
-				</div>
+        <? 
+          $lkcompArchive = carbon_get_post_meta(get_the_ID(),"link_to_competition_archive");
+	          if (!empty($lkcompArchive)) { 
+        ?>
+		      <div class="competitions-bgBlock">
+				    <h5 class="competitions-bgBlock__name">Соревнования окончены</h5>
+				    <a href="<?php echo carbon_get_post_meta(get_the_ID(),"link_to_competition_archive"); ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
+				    <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p>
+			    </div>
+        <? 
+	        } 
+          else {
+        ?>
+            <div class="banner__flex-descp-btn d-flex">
+              <a href="<?php echo carbon_get_the_post_meta('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
+            </div>
+        <? 
+          }
+        ?>
 			</div>
 
 			<div class="banner__flex-date">
@@ -88,7 +104,14 @@ get_header(); ?>
   </div>
 </section>
 
-<section id="application" class="application">
+<? $lkcompArchive = carbon_get_post_meta(get_the_ID(),"link_to_competition_archive");
+	if (!empty($lkcompArchive)) { 
+			echo '<section id="application" class="application" style="display: none;">';
+			}
+			else {
+				echo '<section id="application" class="application">';
+			}
+	?>
   <div class="_container">
     <h2 class="application__title">Отправить заявку на участие</h2>
 

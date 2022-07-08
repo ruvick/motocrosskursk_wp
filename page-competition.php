@@ -25,7 +25,6 @@ get_header(); ?>
 	</div>
 </section>
 
-
 <section id="competitions" class="competitions competitions-page">
 	<div class="_container">
   <?php
@@ -40,12 +39,30 @@ get_header(); ?>
 				9 октября 2022 года запланированы соревнования по мотокроссу в городе Курске урочище «Крутой лог». 
 				Вся подробная информация будет опубликована в сентябре 2022 года.
 			</p>
-		</div>
+		</div> 
 
-		<?php get_template_part('template-parts/sorevnovania');?> 
+		<div class="competitions__row">
+			<?php 
+				$posts = get_posts( array(
+					'numberposts' => 2,
+					'category'    => 4,
+					'order'       => 'ASC',
+					'include'     => array(),
+					'post_type'   => 'post',
+					'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+				) );
+
+				$result = wp_get_recent_posts( $args );
+
+					foreach( $posts as $post ){
+			?>
+				<?php get_template_part('template-parts/sorevnovania');?> 
+		</div>
 
 	</div>
 </section>
+<? } ?>
+
 
 </main>
 

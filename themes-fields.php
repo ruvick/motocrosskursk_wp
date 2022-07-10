@@ -27,6 +27,8 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       ->set_width(50), 
       Field::make('text', 'banner_link_zayavka', 'Ссылка подать заявку')
       ->set_width(50), 
+      Field::make('text', 'link_to_archive', 'Ссылка на архив')
+      ->set_width(100), 
     ))
     ->add_tab('О нас', array(
       Field::make('text', 'about_home_title', 'Заголовок на главной'), 
@@ -35,9 +37,6 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
 
     ->add_tab('Текущее соревнование', array(
       Field::make('text', 'ch_id', 'ID текущего соревнования'), 
-    ))
-    ->add_tab('Ссылка на архив', array(
-      Field::make('text', 'link_to_archive', 'Ссылка на архив'), 
     ))
 
     // ->add_tab('Слайдер', array(

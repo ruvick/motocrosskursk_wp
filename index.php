@@ -34,8 +34,10 @@
           else {
         ?>
 				<div class="banner__flex-descp-btn d-flex">
-					<a href="<?php echo carbon_get_theme_option('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
-					<a href="<?php echo carbon_get_theme_option('banner_link'); ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a>  
+					<? $bLinkZayavka = carbon_get_theme_option("banner_link_zayavka"); 
+						if (!empty($bLinkZayavka)){?><a href="<? echo $bLinkZayavka; ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a><?}?> 
+					<? $bLink = carbon_get_theme_option("banner_link"); 
+						if (!empty($bLink)){?><a href="<? echo $bLink; ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a><?}?>  
 				</div>
         <? 
           }
@@ -90,7 +92,7 @@
 
 					foreach( $posts as $post ){
 						?>
-							<?php get_template_part('template-parts/sorevnovania');?> 
+							<?php get_template_part('template-parts/sorevnovania');?>  
 						<? } ?>
 		</div>
 

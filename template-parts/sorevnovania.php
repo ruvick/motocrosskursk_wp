@@ -3,12 +3,12 @@
 		<div class="competitions__card-img">
 			<img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "tominiatyre" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
       <? 
-        $lkArchive = carbon_get_theme_option("link_to_archive");
-	      if (!empty($lkArchive)) { 
+        $lkcompArchive = carbon_get_post_meta(get_the_ID(),"link_to_competition_archive");
+					if (!empty($lkcompArchive)) { 
       ?>
 		  <div class="competitions-bgBlock competitions__card-img_bgBlock">
 				<h5 class="competitions-bgBlock__name">Соревнования окончены</h5>
-				<a href="<?php echo carbon_get_theme_option('link_to_archive'); ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
+				<a href="<?php echo $lkcompArchive; ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
 				<p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p>
 			</div>
       <? 

@@ -3924,9 +3924,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .banner__flex-date:before {
   content: "";
   position: absolute;
-  top: -8px;
+  /* top: -8px; */
+  top: 16%;
   left: 10%;
   z-index: -1;
+
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
   width: 225px;
   height: 95px;
   background: #F4510C;
@@ -4999,7 +5005,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner {
-    height: 400px;
+    height: 450px;
   }
 
   .banner__flex-date {
@@ -5027,8 +5033,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner__flex-date:before {
-    top: -3px;
-    left: 2%;
+    top: 36px;
+    /* left: 2%; */
     width: 175px;
   }
 
@@ -5089,6 +5095,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner__flex-descp-btn a {
     margin-bottom: 10px;
+  }
+
+  .banner {
+    height: 500px;
   }
 }
 
@@ -5185,9 +5195,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner__flex-date:before {
-    top: -3px;
-    left: calc(50% - 87px);
-    width: 175px;
+    width: 100%;
   }
 
   .competitions__card-img_bgBlock {
@@ -5232,8 +5240,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 }
 
 @media (max-width: 414px) {
-
-
   .banner__flex-date {
     padding: 35px;
     -webkit-box-flex: 0;
@@ -5260,6 +5266,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .wp-block-embed iframe {
     height: 200px;
+  }
+
+  .banner__flex-date {
+    flex: 0 1 100%;
   }
 }
 

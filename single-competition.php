@@ -105,7 +105,9 @@ get_header(); ?>
 </section>
 
 <? $lkcompArchive = carbon_get_post_meta(get_the_ID(),"link_to_competition_archive");
-	if (!empty($lkcompArchive)) { 
+   $lkcompArchiveChek = carbon_get_post_meta(get_the_ID(),"competition_archive_checkbox");
+   $lkcom = $lkcompArchive || $lkcompArchiveChek;
+	if (!empty($lkcom)) { 
 			echo '<section id="application" class="application" style="display: none;">';
 			}
 			else {

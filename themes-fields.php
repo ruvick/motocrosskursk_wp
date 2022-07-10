@@ -177,5 +177,8 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         Field::make('text', 'banner_link_zayavka', 'Ссылка подать заявку')
         ->set_width(100),
         Field::make('text', 'link_to_competition_archive', 'Ссылка на архив'), 
+        Field::make("checkbox", "competition_archive_checkbox", "Скрывать форму ") 
+        // ->help_text('Активирует форму')
+          ->set_width( 5 ),
       ));
 ?>

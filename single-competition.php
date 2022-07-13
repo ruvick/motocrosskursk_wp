@@ -33,7 +33,7 @@ get_header(); ?>
 		      <div class="competitions-bgBlock">
 				    <h5 class="competitions-bgBlock__name">Соревнования окончены</h5>
 				    <a href="<?php echo carbon_get_post_meta(get_the_ID(),"link_to_competition_archive"); ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
-				    <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p>
+				    <!-- <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p> -->
 			    </div>
         <? 
 	        } 

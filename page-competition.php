@@ -41,24 +41,7 @@ get_header(); ?>
 			</p>
 		</div> 
 
-		<div class="competitions__row">
-			<?php 
-				$posts = get_posts( array(
-					'numberposts' => 2,
-					'category'    => 4,
-					'order'       => 'ASC',
-					'include'     => array(),
-					'post_type'   => 'post',
-					'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-				) );
 
-				$result = wp_get_recent_posts( $args );
-
-					foreach( $posts as $post ){
-			?>
-				<?php get_template_part('template-parts/sorevnovania');?> 
-			<? } ?>
-		</div>
 
 	</div>
 </section>

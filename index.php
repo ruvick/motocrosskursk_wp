@@ -27,7 +27,7 @@
 		      <div class="competitions-bgBlock">
 				    <h5 class="competitions-bgBlock__name">Соревнования окончены</h5>
 				    <a href="<?php echo $lkArchive; ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
-				    <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p>
+				    <!-- <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p> -->
 			    </div>
         <? 
 	        } 
@@ -73,31 +73,7 @@
 	</div>
 </section>
 
-<section id="competitions" class="competitions">
-	<div class="_container">
-		<h2 class="competitions__title">Наши соревнования</h2>
 
-		<div class="competitions__row">
-			<?php 
-				$posts = get_posts( array(
-					'numberposts' => 2,
-					'category'    => 4,
-					'order'       => 'ASC',
-					'include'     => array(),
-					'post_type'   => 'post',
-					'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-				) );
-
-				$result = wp_get_recent_posts( $args );
-
-					foreach( $posts as $post ){
-						?>
-							<?php get_template_part('template-parts/sorevnovania');?>  
-						<? } ?>
-		</div>
-
-	</div>
-</section>
 
 </main>
 

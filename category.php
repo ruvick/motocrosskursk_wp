@@ -2,7 +2,7 @@
 
 <?php get_template_part('template-parts/header-section');?>
 
-<main class="page">
+<main class="main-page page">
 
 <section id="banner-narrow" class="banner-narrow">
 	<div class="nuar_blk"></div>

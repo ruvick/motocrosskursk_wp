@@ -30,7 +30,7 @@ function number_format() {
 }
 
 function light_box_set() {
-	let elements = document.querySelectorAll('.galery_lb_set a');
+	let elements = document.querySelectorAll('.wp-block-gallery a');
 	for (let elem of elements) {
 		elem.dataset.fslightbox = "gallery";
 	}

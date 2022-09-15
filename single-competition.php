@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/header-section');?> 
 
-<main class="page">
+<main class="main-page page">
 
 <?php 
 		$banner = wp_get_attachment_image_src( carbon_get_the_post_meta('sor_banner_img'), 'full')[0];
@@ -26,9 +26,25 @@ get_header(); ?>
 				<h1 class="banner__title">
 					<?php echo carbon_get_the_post_meta('sor_banner_title'); ?>
 				</h1>
-				<div class="banner__flex-descp-btn d-flex">
-					<a href="<?php echo carbon_get_the_post_meta('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
-				</div>
+        <? 
+          $lkcompArchive = carbon_get_post_meta(get_the_ID(),"link_to_competition_archive");
+	          if (!empty($lkcompArchive)) { 
+        ?>
+		      <div class="competitions-bgBlock">
+				    <h5 class="competitions-bgBlock__name">Соревнования окончены</h5>
+				    <a href="<?php echo carbon_get_post_meta(get_the_ID(),"link_to_competition_archive"); ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
+				    <!-- <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p> -->
+			    </div>
+        <? 
+	        } 
+          else {
+        ?>
+            <div class="banner__flex-descp-btn d-flex">
+              <a href="<?php echo carbon_get_the_post_meta('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
+            </div>
+        <? 
+          }
+        ?>
 			</div>
 
 			<div class="banner__flex-date">
@@ -45,12 +61,11 @@ get_header(); ?>
 
 <section class="page-recurring">
   <div class="_container">
-  <?php
-				if ( function_exists('yoast_breadcrumb') ) {
-					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
-				}
-			?> 
-
+    <?php
+			if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
+			}
+		?> 
     <div class="about-competition">
       <h2 class="about-competition__title">О соревновании</h2>
       
@@ -58,27 +73,25 @@ get_header(); ?>
         <?php the_content(); ?>
       </div>
       
-      
       <div class="about-competition__row">
-        <?
-          $fiz = carbon_get_the_post_meta('fiz_meropriyatiya');
-          $polozg = carbon_get_the_post_meta('pologenie');
-
-        ?>
-
-        <? if ($polozg) {?>
-          <a href="<?echo wp_get_attachment_url($polozg);?>" class="about-competition__item">
-            <span class="about-competition__item-icon about-competition__item-icon-01"></span>
-            <p class="about-competition__item-descp">Положение о проведении мероприятия</p>
-          </a>
-        <?}?>
-
-        <? if ($fiz) {?>
-          <a href="<?echo wp_get_attachment_url($fiz);?>" class="about-competition__item">
-            <span class="about-competition__item-icon about-competition__item-icon-02"></span>
-            <p class="about-competition__item-descp">Физкультурные мероприятия</p>
-          </a>
-        <?}?>
+        <? 
+		      $file = carbon_get_post_meta(get_the_ID(),"file_complex"); 
+	          if ($file) {
+		      $fileIndex = 0;
+		        foreach ($file as $item) {
+			  ?>
+					<?php
+						printf('
+              <a href="%s" download class="about-competition__item">
+                <span class="about-competition__item-icon about-competition__item-icon-01"></span>
+                <p class="about-competition__item-descp">' . $item['file_complex_name'] . '</p>
+              </a>', $item['file_complex_link']);
+					?>
+			  <?
+			        $fileIndex++; 
+		        }
+	        }
+	      ?>
       </div>
     </div>
 
@@ -91,7 +104,16 @@ get_header(); ?>
   </div>
 </section>
 
-<section id="application" class="application">
+<? $lkcompArchive = carbon_get_post_meta(get_the_ID(),"link_to_competition_archive");
+   $lkcompArchiveChek = carbon_get_post_meta(get_the_ID(),"competition_archive_checkbox");
+   $lkcom = $lkcompArchive || $lkcompArchiveChek;
+	if (!empty($lkcom)) { 
+			echo '<section id="application" class="application" style="display: none;">';
+			}
+			else {
+				echo '<section id="application" class="application">';
+			}
+	?>
   <div class="_container">
     <h2 class="application__title">Отправить заявку на участие</h2>
 

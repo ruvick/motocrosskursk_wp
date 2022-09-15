@@ -20,10 +20,28 @@
 				<h2 class="banner_sub_title">
 					<?php echo carbon_get_theme_option('banner_title'); ?>
 				</h1>
+				<? 
+          $lkArchive = carbon_get_theme_option("link_to_archive");
+	          if (!empty($lkArchive)) { 
+        ?>
+		      <div class="competitions-bgBlock">
+				    <h5 class="competitions-bgBlock__name">Соревнования окончены</h5>
+				    <a href="<?php echo $lkArchive; ?>" class="competitions-bgBlock__link">Смотреть результаты</a>
+				    <!-- <p class="competitions-bgBlock__text">Регистрация откроется в следующем году</p> -->
+			    </div>
+        <? 
+	        } 
+          else {
+        ?>
 				<div class="banner__flex-descp-btn d-flex">
-					<a href="<?php echo carbon_get_theme_option('banner_link_zayavka'); ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a>
-					<a href="<?php echo carbon_get_theme_option('banner_link'); ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a>  
+					<? $bLinkZayavka = carbon_get_theme_option("banner_link_zayavka"); 
+						if (!empty($bLinkZayavka)){?><a href="<? echo $bLinkZayavka; ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a><?}?> 
+					<? $bLink = carbon_get_theme_option("banner_link"); 
+						if (!empty($bLink)){?><a href="<? echo $bLink; ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a><?}?>  
 				</div>
+        <? 
+          }
+        ?>
 			</div>
 
 			<div class="banner__flex-date">
@@ -55,14 +73,7 @@
 	</div>
 </section>
 
-<section id="competitions" class="competitions">
-	<div class="_container">
-		<h2 class="competitions__title">Наши соревнования</h2>
 
-		<?php get_template_part('template-parts/sorevnovania');?> 
-
-	</div>
-</section>
 
 </main>
 

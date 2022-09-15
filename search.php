@@ -10,7 +10,7 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/header-section');?>
 
-<main id="primary" class="page site-main"> 
+<main class="main-page page">
 
 	<section class="content"> 
 		<div class="_container">

@@ -9,6 +9,8 @@
 					'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
 				) );
 
+				$result = wp_get_recent_posts( $args );
+
 					foreach( $posts as $post ){
 			?>
 			<div class="competitions__column">

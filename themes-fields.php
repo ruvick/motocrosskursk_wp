@@ -27,6 +27,8 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       ->set_width(50), 
       Field::make('text', 'banner_link_zayavka', 'Ссылка подать заявку')
       ->set_width(50), 
+      Field::make('text', 'link_to_archive', 'Ссылка на архив')
+      ->set_width(100), 
     ))
     ->add_tab('О нас', array(
       Field::make('text', 'about_home_title', 'Заголовок на главной'), 
@@ -127,18 +129,34 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
           ->set_width(50),
     ) );
 
-    Container::make('post_meta', 'single_arch', 'Доп поля архив соревнований')
+    Container::make('post_meta', 'single_arch', 'Доп поля архив соревнований') 
 	    ->show_on_template('single-arch.php')
 	    ->add_fields(array(
 		    Field::make('text', 'custom_post_date', 'Дата для карточки')->set_width(50),
 		    Field::make('text', 'custom_post_adress', 'Адрес для карточки')->set_width(50),
+        Field::make('complex', 'file_complex', 'Блок с файлами')
+        // ->set_max(3) // Можно будет выбрать только 5 постов
+        ->add_fields(array(
+          Field::make('file', 'file_complex_link', 'Файл')
+          ->set_value_type('url')
+          ->set_width(15),
+          Field::make('text', 'file_complex_name', 'Название файла')   
+          ->set_width(85),
+        )), 
       ));
 
     Container::make('post_meta', 'single', 'Доп поля карточки')
 	    ->show_on_template('single-competition.php')
 	    ->add_fields(array(
-		    Field::make('file', 'fiz_meropriyatiya', 'Физкультурные мероприятия')->set_width(50),
-		    Field::make('file', 'pologenie', 'Положение о проведении мероприятия')->set_width(50),
+        Field::make('complex', 'file_complex', 'Блок с файлами')
+        // ->set_max(3) // Можно будет выбрать только 5 постов
+        ->add_fields(array(
+          Field::make('file', 'file_complex_link', 'Файл')
+          ->set_value_type('url')
+          ->set_width(15),
+          Field::make('text', 'file_complex_name', 'Название файла')   
+          ->set_width(85),
+        )), 
 		    Field::make('text', 'custom_post_date', 'Дата для карточки')->set_width(50),
 		    Field::make('text', 'custom_post_adress', 'Адрес для карточки')->set_width(50),
       ));
@@ -158,9 +176,9 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         ->set_width(100), 
         Field::make('text', 'banner_link_zayavka', 'Ссылка подать заявку')
         ->set_width(100),
+        Field::make('text', 'link_to_competition_archive', 'Ссылка на архив'), 
+        Field::make("checkbox", "competition_archive_checkbox", "Скрывать форму ") 
+        // ->help_text('Активирует форму')
+          ->set_width( 5 ),
       ));
-
-
-
-
 ?>

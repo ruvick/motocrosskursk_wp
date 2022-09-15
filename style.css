@@ -399,18 +399,18 @@ textarea:focus {
   border-radius: 3px;
 }
 
-.file_input_wrap input{
+.file_input_wrap input {
   display: none;
 }
 
-.file_input_wrap label{ 
+.file_input_wrap label {
   margin-top: auto;
   margin-bottom: auto;
   width: 100%;
 }
 
 .input_select {
-  border:none;
+  border: none;
   padding: 0;
 }
 
@@ -3744,7 +3744,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .mob-menu {
   position: fixed;
-  z-index: 500;
+  z-index: 550;
   top: 0;
   right: -100%;
   width: 50%;
@@ -3897,7 +3897,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .banner_sub_title {
-  color:white;
+  color: white;
   font-size: 1.5em;
   margin-bottom: 20px;
 }
@@ -3924,9 +3924,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .banner__flex-date:before {
   content: "";
   position: absolute;
-  top: -8px;
+  /* top: -8px; */
+  top: 16%;
   left: 10%;
   z-index: -1;
+
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
   width: 225px;
   height: 95px;
   background: #F4510C;
@@ -4026,6 +4032,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .competitions__card-img {
+  position: relative;
   height: 296px;
   overflow: hidden;
 }
@@ -4151,9 +4158,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .card-compet__card-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 258px;
-  flex: 0 1 258px;
+  -ms-flex: 0 0 258px;
+  flex: 0 0 258px;
   height: 260px;
   margin-right: 40px;
 }
@@ -4373,6 +4379,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 /* Оформление дефолтных стилей */
+.content h2,
+.content h3 {
+  margin-bottom: 25px;
+}
+
 .content ul {
   margin-bottom: 35px;
 }
@@ -4657,21 +4668,81 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
 
 
-.text_style h3{
+.text_style h3 {
   margin: 20px 0;
   font-size: 1em;
 }
 
-.text_style ul{
+.text_style ul {
   padding-left: 10px;
   margin-left: 10px;
-  
+
 }
 
-.text_style ul li{ 
+.text_style ul li {
   margin: 5px 0;
   list-style: disc;
 }
+
+.arch-block-plach {
+  margin-bottom: 35px;
+}
+
+.arch-block-video-report__file {
+  margin-bottom: 25px;
+}
+
+.arch-block-video-report__file video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.wp-block-embed iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 650px;
+  margin-bottom: 25px;
+}
+
+.competitions__text {
+  margin-bottom: 20px;
+}
+
+.competitions__card-img_bgBlock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.competitions-bgBlock {
+  padding: 15px;
+  background: #F4510B;
+}
+
+.competitions-bgBlock__name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.competitions-bgBlock__link {
+  display: block;
+  font-size: 18px;
+  text-decoration: underline;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.competitions-bgBlock__text {
+  font-size: 14px;
+  color: #fff;
+}
+
+
+
+
 
 
 
@@ -4789,10 +4860,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     display: flex;
     flex-direction: column;
   }
-  .list-registered__table-tbody-td .mobile_comment{
+
+  .list-registered__table-tbody-td .mobile_comment {
     display: block;
     font-weight: 600;
   }
+
   .list-registered__table-tbody-td {
     padding: 15px 25px;
     display: flex;
@@ -4800,7 +4873,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     border-bottom: 1px dotted gray;
   }
 
-  .list-registered__table-tbody-tr .list-registered__table-tbody-td:last-child{ 
+  .list-registered__table-tbody-tr .list-registered__table-tbody-td:last-child {
     border-bottom: 3px solid black;
   }
 }
@@ -4864,8 +4937,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .header__contacts {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 135px;
-    flex: 0 0 135px;
+    -ms-flex: 0 0 145px;
+    flex: 0 0 145px;
     margin-right: 15px;
   }
 
@@ -4932,7 +5005,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner {
-    height: 400px;
+    height: 450px;
   }
 
   .banner__flex-date {
@@ -4960,8 +5033,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner__flex-date:before {
-    top: -3px;
-    left: 2%;
+    top: 36px;
+    /* left: 2%; */
     width: 175px;
   }
 
@@ -4983,9 +5056,21 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     flex: 0 1 100%;
   }
 
+  .wp-block-embed iframe {
+    height: 450px;
+  }
 
+  .main-page {
+    padding-top: 50px;
+  }
 
+  .banner-narrow {
+    padding: 35px 0 !important;
+  }
 
+  #breadcrumbs {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -5010,6 +5095,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner__flex-descp-btn a {
     margin-bottom: 10px;
+  }
+
+  .banner {
+    height: 500px;
   }
 }
 
@@ -5049,6 +5138,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 }
 
+@media (max-width: 540px) {
+  .wp-block-embed iframe {
+    height: 300px;
+  }
+}
+
 @media (max-width: 515px) {
   .popup__img {
     display: none;
@@ -5071,7 +5166,7 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
     text-align: center;
   }
 
-  .banner_sub_title { 
+  .banner_sub_title {
     text-align: center;
   }
 
@@ -5082,10 +5177,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .banner__flex-descp {
     margin-bottom: 15px;
-    width:100%;
+    width: 100%;
   }
 
-  .header__contacts { 
+  .header__contacts {
     flex: 0 0 145px;
   }
 
@@ -5100,9 +5195,11 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   }
 
   .banner__flex-date:before {
-    top: -3px;
-    left: calc(50% - 87px);
-    width: 175px;
+    width: 100%;
+  }
+
+  .competitions__card-img_bgBlock {
+    width: 100%;
   }
 }
 
@@ -5143,8 +5240,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 }
 
 @media (max-width: 414px) {
-
-
   .banner__flex-date {
     padding: 35px;
     -webkit-box-flex: 0;
@@ -5167,6 +5262,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 
   .competitions__card-descp-flex-btn {
     width: 100%;
+  }
+
+  .wp-block-embed iframe {
+    height: 200px;
+  }
+
+  .banner__flex-date {
+    flex: 0 1 100%;
   }
 }
 

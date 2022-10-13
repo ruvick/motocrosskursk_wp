@@ -35,7 +35,7 @@
         ?>
 				<div class="banner__flex-descp-btn d-flex">
 					<? $bLinkZayavka = carbon_get_theme_option("banner_link_zayavka"); 
-						if (!empty($bLinkZayavka)){?><a href="<? echo $bLinkZayavka; ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ</a><?}?> 
+						if (!empty($bLinkZayavka)){?><a href="<? echo $bLinkZayavka; ?>" class="btn _popup-link">ПОДАТЬ ЗАЯВКУ11</a><?}?> 
 					<? $bLink = carbon_get_theme_option("banner_link"); 
 						if (!empty($bLink)){?><a href="<? echo $bLink; ?>" class="btn btn_transp">ПОДРОБНЕЕ О СОРЕВНОВАНИИ</a><?}?>  
 				</div>
@@ -44,12 +44,13 @@
         ?>
 			</div>
 
-			<div class="banner__flex-date">
+
+			<!-- <div class="banner__flex-date">
 				<p class="banner__flex-date-number"><?php echo carbon_get_theme_option('banner_number'); ?></p>
 				<div class="banner__flex-date-line"></div> 
 				<p class="banner__flex-date-month"><?php echo carbon_get_theme_option('banner_month'); ?></p>
 				<p class="banner__flex-date-year"><?php echo carbon_get_theme_option('banner_year'); ?></p>
-			</div>
+			</div> -->
 
 		</div>
 	</div>

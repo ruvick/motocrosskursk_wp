@@ -3861,7 +3861,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .banner {
   position: relative;
-  padding: 60px 0 104px 0;
+  padding: 60px 0 5px 0;
   height: 700px;
   background-size: cover;
   background-repeat: no-repeat;

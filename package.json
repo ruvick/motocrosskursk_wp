@@ -18,7 +18,7 @@
     "send_func": "scp -C functions.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "send_futt": "scp -C footer.php kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "mk_part_carbon": "ssh kvakur5l_all@kvakur5l.beget.tech \"mkdir -p motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/inc\"",
-    "send_carbon": "scp -C -r inc kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
+    "send_carbon": "scp -C -r carbon-fields kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "mk_part_dir": "ssh kvakur5l_all@kvakur5l.beget.tech \"mkdir -p motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/template-parts\"",
     "send_part": "scp -C -r template-parts kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",
     "send_protocol_all": "scp -C -r protocol kvakur5l_all@kvakur5l.beget.tech:motocrosskursk.ru/public_html/wp-content/themes/motocrosskursk/",

@@ -2,7 +2,7 @@
 			<?php 
 				$posts = get_posts( array(
 					'numberposts' => 2,
-					'category'    => 4,
+					'category'    => 3,
 					'order'       => 'ASC',
 					'include'     => array(),
 					'post_type'   => 'post',

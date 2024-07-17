@@ -4237,6 +4237,26 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 17px;
 }
 
+@media (max-width: 1024px) {
+  .card-compet__column {
+    flex: 0 1 100%;
+  }
+}
+
+@media (max-width: 512px) {
+  .card-compet__column .card-compet__card {
+    flex-direction: column;
+  }
+
+  .card-compet__card-descp-btn {
+    margin-top: 20px;
+  }
+
+  .card-compet__card-img {
+    width:100%;
+  }
+}
+
 .about-competition__title {
   margin-bottom: 40px;
 }
@@ -4272,6 +4292,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 28px 27px;
   background: #F7F7F7;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .about-competition__item-descp {
